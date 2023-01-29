@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/finalizar_compra.css">
+    <title>Art Pet & Cia</title>
+</head>
+
+<body class="container">
+   
+    <header class="container">
+        <img class="logomarca" src="./assets/img/logo/ArtPet&Cia.jpeg" alt="ArtPet&Cia">
+                
+        <div class="div_cadeado">
+            <img class="cadeado" src="./assets/img/icones/cadeado.png" alt="cadeado">
+            Ambiente Seguro
+        </div>
+    </header>
+
+    <main class="conteiner">
+
+        <div class="finalizar_formaPgto">
+            <h1>Foma de Pagamento</h1>
+            <span>Selecione uma das formas de pagamento disponíveis para esta compra:</span>
+        </div>
+
+        <div class="finalizar_cartao">
+            
+            <form class="cartaoCredito">
+                <h3>Cartão de Crédito</h3>
+                <div class="input-form-cartao">
+                   <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número">
+                </div>
+                <div class="input-form-cartao">
+                    <input type="text" name="nome" id="nome" placeholder="Nome impresso no cartão">
+                </div>
+                <div class="input-form-cpf-validade">
+                    <input type="text" name="cpfCartao" id="cpfCartao" placeholder="CPF do titular">
+                    <input type="text" name="validadeCartao" id="validadeCartao" placeholder="Validade">
+                </div>
+                <div class="input-form-cvv-parcelas">
+                    <section class="input-form-cvv">
+                        <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
+                    </section>
+                
+                    <section class="input-form-parcelas">
+                    <select name="parcelasCartao" id="parcelasCartao">
+                        <option selected disabled>Parcelas</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    </section>
+                </div>
+
+            </form>
+            <img src="./assets/img/icones/—Pngtree—credit card flat icon_6845408.png">
+        </div>
+
+        <div class="finalizar_pix">
+            <h3>Pix</h3>
+            <h4>Pague na hora com Pix</h4>
+            
+            <section>
+                <ol>
+                    <li>
+                        O código Pix será exibido na próxima etapa, após o pedido ser finalizado.
+                    </li>
+                    <li>
+                        Você deverá realizar o pagamento no aplicativo do seu banco.
+                    </li>
+                </ol>
+            </section>
+            
+            <section >
+                <span><strong>O código Pix expira em 10 minutos.</strong></span>
+            </section>
+            
+        </div>
+
+
+
+        <div class="gridCompra">
+            <div class="primeiraColunaCompra">
+                <section class="section_finalizarCompra">
+                    <h2>Finalização de Compras</h2>
+                    <span>Confira as informações antes de finalizar a compra</span>
+                </section>
+
+                     
+                <div class="confirmarDadosPessoais">
+                    <span>Dados Pessoais</span>
+                </div>
+
+                <div class="section_confirmarDadosPessoais">
+                        <section>
+                            <img src="./assets/img/icones/do-utilizador.svg">
+                        </section>
+                        <section>
+                            <article class="confirmarNome">
+                                <span><strong>João José da Silva</span></strong>
+                            </article>
+                            <article class="confirmarEmail">
+                                <span>E-mail:</span>
+                                <span>joaojose@gmail.com</span>
+                            </article>
+                            <article class="confirmarTelefone">
+                                <span>Telefone:</span>
+                                <span>11 99988-7766</span>
+                            </article>
+                        </section>
+                        <section>
+                            <img src="./assets/img/icones/lapis.svg">
+                        </section>
+                </div>
+
+                <div class="confirmarEndereco">
+                    <span>Endereço de Entrega</span>
+                </div>
+
+                <div class="finalizar_confirmarEndereco">
+                    <section>
+                        <img src="./assets/img/icones/do-utilizador.svg">
+                    </section>
+                    <section>
+                        <article class="confirmarRua">
+                            <span>Rua Nossa Senhora da Lapa, 1700 - Lapa</span>
+                        </article>
+                        <article class="confirmarCidade">
+                            <span>São Paulo</span>
+                        </article>
+                        <article class="confirmarCep">
+                            <span>CEP: 05072-000</span>
+                        </article>
+                    </section>
+                    <section>
+                        <img src="./assets/img/icones/lapis.svg">
+                    </section>
+                </div>
+            </div>
+        
+
+            <div class="segundaColuna">
+                <section>
+                    <h2>Resumo do Pedido</h2>
+                </section>
+
+                <section class="section_resumoCompras">
+                    <article class="final_produtos">
+                        <span>Produto</span>
+                        <span>R$ 190,00</span>
+                    </article>
+                    <article class="final_frete">
+                        <span>Frete</span>
+                        <span>R$ 10,00</span>
+                    </article>
+                    <article class="final_total">
+                        <span>Total</span>
+                        <span>R$ 200,00</span>
+                    </article>
+                    <article>
+                        <button class="button_finalizar_compra" type="submit">Finalizar Compra</button>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+   
+
+
+    <footer class="container">
+        <div class="footer_link">
+            <h4><strong>Sobre Nós</strong></h4>
+            <a href="">Quem Somos</a>
+            <a href="">Trabalhe Conosco</a>
+        </div>
+        <div class="footer_link">
+            <h4><strong>Dúvidas</strong></h4>
+            <a href="">Fale Conosco</a>
+            <a href="">Política de Privacidade</a>
+        </div>
+        <div class="footer_redes">
+            <h4><strong>Redes Sociais</strong></h4> 
+            <div>
+                <a href="https://www.facebook.com" target="_blank"><img src="./assets/img/icones/social-media-facebook.webp" alt="facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="./assets/img/icones/social-media-instagram.webp" alt="instagram"></a>
+                <a href="https://www.twitter.com" target="_blank"><img src="./assets/img/icones/social-media-twitter.webp" alt="twitter"></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="./assets/img/icones/social-media-youtube.webp" alt="youtube"></a> 
+            </div>
+        </div>
+        <div class="footer_pagamentos">
+            <h4><strong>Formas de Pagamento</strong></h4>
+            <div>
+                <img src="./assets/img/icones/pix-transparent.svg" alt="pix" style="background-color: lightgray;">
+                <img src="./assets/img/icones/visa-logo.webp" alt="visa">
+                <img src="./assets/img/icones/mastercard-logo.webp" alt="master">
+                <img src="./assets/img/icones/hypercard-logo.webp" alt="hiper">
+                <img src="./assets/img/icones/elo-logo.webp" alt="elo">
+                <img src="./assets/img/icones/dinersclub-logo.webp" alt="diners">
+                <img src="./assets/img/icones/barcode-icon.webp" alt="boleto" style="background-color: lightgray;">
+            </div>
+        </div>
+        <div class="footer_app">
+            <h4><strong>Baixe Nosso App</strong></h4>
+            <a href="" target="_blank"><img src="./assets/img/icones/app-store.webp" alt="app-store"></a>
+            <a href="" target="_blank"><img src="./assets/img/icones/google-play.webp" alt="google-play"></a>
+        </div>
+    </footer>
+
+
+</body>
+</html>

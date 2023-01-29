@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family= Poppins: wght @400;600;700 & display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(157, 190, 185, 1);
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    font-size: 62.5%; /*equivale a 10px => (2.4rem equivale a 24px)*/
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    cursor:pointer;
+    /* color: inherit; */
+}
+
+/* img {
+    cursor: pointer;
+    width: 100px;
+} */
+
+
+header {
+    background-color: #FF8882;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    position:fixed;
+    top:0;
+    align-items: center;
+}
+
+.logomarca {
+    width: 12rem;
+    margin-left: 4rem;
+}
+
+header div{
+    margin: auto 20px;
+    display: flex;
+    justify-content: center;
+}
+
+header div a{
+    text-align: center;
+    margin: auto 5px;
+    text-decoration: none;
+}
+
+.div_cadeado {
+    display: inherit;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 87px;
+    font-size: 15px;
+}
+
+.cadeado {
+    width: 5%; 
+    margin-right: 5px;
+ }
+
+ .finalizar_cartao, .finalizar_pix {
+    display: flex;
+    border: 0.1rem solid rgb(211, 211, 211);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    margin: 3rem;
+ }
+
+ .finalizar_pix {
+    flex-direction: column;
+ }
+
+ .finalizar_cartao h3, .finalizar_pix h3 {
+    font-size: 2rem;
+ }
+
+ .finalizar_pix h4, .finalizar_pix section {
+    font-size: 1.2rem;
+    margin-top: -16px;
+    margin-bottom: 2rem;
+ }
+
+ .finalizar_pix li {
+    padding: 0.8rem;
+ }
+
+ 
+ .finalizar_pix section span {
+    display: flex;
+    justify-content: center;
+ }
+
+
+ .finalizar_cartao img{
+    width: 20%;
+    margin-left: 10rem;
+ }
+
+ .cartaoCredito {
+    gap: 3rem;
+ }
+
+ .input-form-cartao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5rem;
+    margin-bottom: 1.2rem;
+    height: 4rem;
+    
+ } 
+
+ .input-form-cartao input, .input-form-cpf-validade input, .input-form-cvv input, .input-form-parcelas select {
+    color: rgb(119, 119, 119);
+    font-weight: 400;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    padding: 1.2rem 1.6rem;
+    height: 4rem;
+    border: 0rem;
+    border-radius: 1rem;
+ }
+
+ 
+ .input-form-cpf-validade, .input-form-cvv-parcelas /* , .input-form-parcelas */ {
+    display: flex;
+    height: 4rem;
+    gap: 4rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+ }
+
+
+ .section_finalizarCompra h2 {
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.finalizar_formaPgto h1 {
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 15rem;
+}
+
+.section_finalizarCompra span, .finalizar_formaPgto span{
+    font-size: 1.5rem;
+    margin-left: 3rem;
+}
+
+.confirmarDadosPessoais, .confirmarEndereco {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+ }
+
+ .section_confirmarDadosPessoais, .finalizar_confirmarEndereco {
+    border: 0.1rem solid rgb(211, 211, 211);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+.section_confirmarDadosPessoais img, .finalizar_confirmarEndereco img{
+    width: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+
+
+.confirmarNome span, .confirmarTelefone span, .confirmarEmail span, .confirmarRua span, .confirmarCidade span, .confirmarCep span {
+   margin-bottom: 0.2rem;
+   font-size: 1.7rem;
+   
+}
+
+ 
+ .gridCompra {
+    display: grid;
+    grid-template-columns: minmax(65%, 3fr) minmax(32%, 1.45fr);
+    gap: 2.4rem;
+} 
+
+
+ 
+
+.section_resumoCompras {
+    /* font-size: 2rem; */
+    border: 0.1rem solid rgb(211, 211, 211);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    margin-right: 3rem;
+}
+
+article span {
+    font-size: 2rem;
+}
+
+.final_produtos, .final_frete {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-bottom: 1.6rem;
+}
+
+.final_total {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+    border-top: 1px solid rgb(218, 218, 218);
+    padding-top: 1.6rem;
+}
+
+.button_finalizar_compra {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(1, 135, 142);
+    color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    outline: none;
+    height: 4.8rem;
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.button_continuar_compra {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    color: rgb(1, 135, 142);
+    justify-content: center;
+    display: flex;
+}
+
+
+footer {
+    background-color: #194350;
+    margin: 1rem 0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer_link {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer_link h4, .footer_redes h4, .footer_app h4, .footer_pagamentos h4 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer_link a, .footer_redes a, .footer_app a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer_link a:hover, .footer_redes a:hover, .footer_app a:hover {
+    color: blue;
+    font-size: 1.2rem;
+}
+
+.footer_redes a {
+    padding: 0 0.5rem;
+}
+
+.footer_app {
+    display: flex;
+    flex-direction: column;
+}
+

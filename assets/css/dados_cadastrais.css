@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ff8882;
+    display: flex;
+    margin: 4px;
+    
+}
+
+
+.container{
+    background-color: #ff8882;
+    display: flex;
+}
+
+ .logomarca {
+    width: 15%;
+    margin-left: 40px;
+}
+
+
+body {
+    background-color: #9dbeb9;
+    color: #0a0707;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+ }
+
+
+  form {
+    
+    padding: 40px;
+    
+ } 
+
+ .dados_cadastrais {
+display: flex;
+flex-direction: row;
+ flex-wrap: nowrap; 
+margin-left: 30px;
+ }
+
+ .dados_cadastrais .coluna1 {
+    /* background-color: aqua; */
+    max-width: 49%;
+ }
+ .dados_cadastrais .coluna2 {
+   /*  background-color: #ff8882; */
+    max-width: 49%;
+ }
+
+ .salvar {
+     
+   
+    justify-content: right;
+    margin-bottom: 1rem;
+    
+
+    /* background-color: #ff8882; */
+   
+ }
+
+ .botoes {
+   /*  background-color: #0a0707; */
+    justify-content: right;
+   /*  margin-bottom: 1rem; */
+    margin: 50px;
+ }
+
+ 

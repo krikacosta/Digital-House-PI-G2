@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family= Poppins: wght @400;600;700 & display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(157, 190, 185, 1);
+    font-family: 'Poppins', sans-serif;;
+}
+
+:root {
+    font-size: 62.5%; /*equivale a 10px => (2.4rem equivale a 24px)*/
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #FF8882;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logomarca img{
+    width: 20rem;
+    margin-left: 4rem;
+}
+
+header div{
+    margin: auto 2rem;
+}
+
+header div input {
+    padding: 1rem;
+    border-radius: 1.2rem;
+    border-color: white;   
+}
+
+.div_busca input::placeholder {
+    color: darkgray;   
+}
+
+.div_busca input:focus {
+    outline-color:#FF8882;
+}
+
+header div a{
+    text-align: center;
+    margin: auto 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+header div a:hover {
+    color: blue;
+}
+
+.div_busca {
+    margin-left: 8.5rem;
+    font-size: 1.5rem;
+}
+
+.div_carrinho {
+    display: inherit;
+    align-items: center;
+}
+
+.div_carrinho a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: black;
+    
+}
+.carrinho {
+    padding-right: 1rem;
+    width: 45%;
+}
+
+.nav_texto {
+    margin-top: 1rem;
+    background-color: #FFC2B4;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_texto a {
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+
+.nav_texto a:hover {
+    color: blue;
+}
+
+.banner {
+    width: 100%;
+    border-color: none;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #FF8882;
+    
+}
+
+.promotion {
+    display: flex;
+    justify-content: center;
+    border-color: none;
+    margin-bottom: 0.5rem;
+}
+
+.promotion div {
+    width: 80%; 
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.promotion div img:hover {
+    box-shadow: 1rem 0.5rem 1rem rgb(15, 15, 15, 0.85);
+}
+.promotion div img {
+    width: 16rem;
+    border-radius: 1.2rem;
+    border-color: none;
+    /* box-shadow: 1rem 0.5rem 1rem rgba(88, 88, 88, 0.95); */
+    padding: 0.5rem;
+}
+
+.nav_imagem {
+    background-color: #FFC2B4;
+}
+
+.nav_imagem ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+
+.nav_imagem ul li a {
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    text-align: center;
+    gap: 1rem;
+}
+
+.nav_imagem img {
+    width: 10rem;
+    border-radius: 1.2rem;
+    box-shadow: 1rem 0.5rem 1rem rgba(88, 88, 88, 0.95);
+}
+
+.nav_imagem img:hover {
+    width: 11rem;
+    margin-bottom: -1rem;
+}
+
+.produtos {
+    background-color: #FF8882;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3rem 0;
+}
+
+/* .bar img {
+    width: 30rem;
+    height: 30rem;
+} */
+
+.produtos article {
+    width: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    
+    border-radius: 1.2rem;
+    box-shadow: 20px 5px 20px rgba(88, 88, 88, 0.95);
+}
+
+.produtos article:hover {
+    margin-top: -0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+.produtos a {
+    text-decoration: none;
+}
+
+.produtos img {
+    width: 100%;
+    height: 25rem;
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.detalhe-produto {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 0px 20px 5px;
+}
+
+.titulo-detalhe-produto {
+    font-weight: 600;
+    color: black;
+    font-size: 2rem;
+}
+
+.detalhe-produto spam {
+    font-weight: 400;
+    color: black;
+    font-size: 2.5rem;
+}
+
+footer {
+    background-color: #194350;
+    margin: 1rem 0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer_link {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer_link h4, .footer_redes h4, .footer_app h4, .footer_pagamentos h4 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer_link a, .footer_redes a, .footer_app a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer_link a:hover, .footer_redes a:hover, .footer_app a:hover {
+    color: blue;
+    font-size: 1.2rem;
+}
+
+.footer_redes a {
+    padding: 0 0.5rem;
+}
+
+.footer_app {
+    display: flex;
+    flex-direction: column;
+}

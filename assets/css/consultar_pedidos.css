@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family= Poppins: wght @400;600;700 & display=swap');
+
+
+.cabecalho_pedidos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+.cabecalho_pedidos h1 {
+    margin-left: 30rem;
+}
+
+.secao_pedidos {
+    margin: 5rem auto 10rem;
+    text-align: right;
+}
+
+.titulo_pedidos {
+    display: flex;
+    padding: 2rem 10rem;
+    gap: 22rem;
+}
+
+.pedido {
+    display: flex;
+    margin-bottom: 1rem;
+    border: 0.1rem solid lightgrey;
+    border-radius: 1rem;
+    padding: 0.5rem 0;
+}
+
+.detalhe_pedido {
+    padding: 2rem 10rem;
+}
+
+.detalhe_pedido span {
+    margin-right: 22rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#btn_detalhe_pedido {
+    background-color: #E07C1F;
+    color: white;
+    padding: 0 4rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#btn_detalhe_pedido_voltar {
+    background-color: #798BEB;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
