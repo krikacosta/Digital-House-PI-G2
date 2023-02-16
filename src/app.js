@@ -6,6 +6,7 @@ const homeRouter = require('./routes/home');
 const produtoRouter = require('./routes/produto');
 const carrinhoRouter = require('./routes/carrinho');
 const finalizarCompraRouter = require('./routes/finalizarCompra');
+const cadastrarNovoEndRouter = require('./routes/cadastarNovoEnd');
 
 //Variaveis
 const app = express();
@@ -21,6 +22,7 @@ app.use(homeRouter);
 app.use(produtoRouter);
 app.use(carrinhoRouter);
 app.use(finalizarCompraRouter);
+app.use(cadastrarNovoEndRouter);
 
 //Escuta do Servidor Funcionando
 app.listen(port, () => console.log(`Servidor funcionando na porta ${port}`))
