@@ -3,7 +3,7 @@ const EditarProdutoController = require('../controllers/EditarProdutoController'
 
 const router = express.Router();
 
-router.get('/', EditarProdutoController.showHomePage);
+router.get('/editarproduto', EditarProdutoController.showEditarProdutoPage);
 
 
 module.exports = router;

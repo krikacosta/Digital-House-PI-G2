@@ -3,7 +3,7 @@ const AlterarSenhaController = require('../controllers/AlterarSenhaController');
 
 const router = express.Router();
 
-router.get('/', AlterarSenhaController.showHomePage);
+router.get('/alterarsenha', AlterarSenhaController.showAlterarSenhaPage);
 
 
 module.exports = router;

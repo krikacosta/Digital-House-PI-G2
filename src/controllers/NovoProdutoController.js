@@ -1,9 +1,9 @@
 const Servico = require("../model/Servico")
 
-console.log("página novo produco")
+console.log("página novo produto")
 const NovoProdutoController = {
     showNovoProdutoPage: (req, res) => {
-        return res.render("NovoProduto");
+        return res.render("novoProduto");
     },
 
 }
