@@ -1,99 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family= Poppins: wght @400;600;700 & display=swap');
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rgba(157, 190, 185, 1);
-    font-family: 'Poppins', sans-serif;
-}
-
-:root {
-    font-size: 62.5%; /*equivale a 10px => (2.4rem equivale a 24px)*/
-}
-
-.container {
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    cursor:pointer;
-    /* color: inherit; */
-}
-
-/* img {
-    cursor: pointer;
-    width: 100px;
-} */
-
-
-header {
-    background-color: #FF8882;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-
-    position:fixed;
-    top:0;
-    align-items: center;
-}
-
-.logomarca {
-    width: 12rem;
-    margin-left: 4rem;
-}
-
-header div{
-    margin: auto 20px;
-    display: flex;
-    justify-content: center;
-}
-
-header div a{
-    text-align: center;
-    margin: auto 5px;
-    text-decoration: none;
-}
-
-.div_cadeado {
-    display: inherit;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 87px;
-    font-size: 15px;
-}
-
-.cadeado {
-    width: 5%; 
-    margin-right: 5px;
- }
-
  .finalizar_cartao, .finalizar_pix {
     display: flex;
     border: 0.1rem solid rgb(211, 211, 211);
     border-radius: 1.2rem;
-    padding: 2rem;
-    margin: 3rem;
+    /* padding: 2rem; */
+    margin: 2rem 3rem;
  }
 
  .finalizar_pix {
     flex-direction: column;
  }
 
- .finalizar_cartao h3, .finalizar_pix h3 {
+ /* .finalizar_cartao h3, .finalizar_pix h3 {
     font-size: 2rem;
- }
+ } */
 
  .finalizar_pix h4, .finalizar_pix section {
     font-size: 1.2rem;
-    margin-top: -16px;
-    margin-bottom: 2rem;
+    margin-top: 7px;
+    margin-bottom: -0.8rem;
+    margin-left: 3.5rem;
  }
 
- .finalizar_pix li {
-    padding: 0.8rem;
+ .finalizar_pix section span {
+    color:crimson;
  }
 
  
@@ -102,15 +31,16 @@ header div a{
     justify-content: center;
  }
 
+ .finalizar_pix label {
+    font-weight: 5rem;
+ }
 
  .finalizar_cartao img{
     width: 20%;
     margin-left: 10rem;
  }
 
- .cartaoCredito {
-    gap: 3rem;
- }
+
 
  .input-form-cartao {
     display: flex;
@@ -134,7 +64,7 @@ header div a{
  }
 
  
- .input-form-cpf-validade, .input-form-cvv-parcelas /* , .input-form-parcelas */ {
+ .input-form-cpf-validade, .input-form-cvv-parcelas {
     display: flex;
     height: 4rem;
     gap: 4rem;
@@ -181,6 +111,7 @@ header div a{
     width: 2rem;
     margin-right: 2rem;
     margin-left: 2rem;
+    cursor: pointer;
 }
 
 
@@ -259,45 +190,48 @@ article span {
     display: flex;
 }
 
+.accordion-item label {
+    /* display: inline; */
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    font-weight: 600;
 
-footer {
-    background-color: #194350;
-    margin: 1rem 0;
+}
+
+.inputAccordion:checked ~ section {
+    height: auto;
+    max-height: 200px;
+    transform: all;
+    margin-top: 2rem;
+    
+}
+
+/* .inputAccordion:checked ~ label{
+    background-color:#194350;
     color: white;
+} */
+
+.inputAccordion {
+    /* size:2px;
+    border-radius: 0.5rem; */
+    cursor: pointer;
+}
+
+.accordion-item section {
+    gap: 3rem;
+    overflow: hidden;
+    max-height: 0px;
     display: flex;
-    justify-content: space-around;
-    text-align: center;
-    padding: 2rem 0;
+    transition: all 0.4s linear;
+ }
+
+ 
+ .accordion-item {
+    padding: 3rem;
 }
 
-.footer_link {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
 
-.footer_link h4, .footer_redes h4, .footer_app h4, .footer_pagamentos h4 {
-    color: white;
-    font-size: 1.5rem;
-}
-
-.footer_link a, .footer_redes a, .footer_app a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.footer_link a:hover, .footer_redes a:hover, .footer_app a:hover {
-    color: blue;
-    font-size: 1.2rem;
-}
-
-.footer_redes a {
-    padding: 0 0.5rem;
-}
-
-.footer_app {
-    display: flex;
-    flex-direction: column;
-}
-
+ .imgCard img {
+    width: 27%;
+ }
