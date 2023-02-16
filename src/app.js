@@ -4,6 +4,9 @@ const path = require('path');
 
 const homeRouter = require('./routes/home');
 const produtoRouter = require('./routes/produto');
+const novoProdutoRouter = require('./routes/novoProduto');
+const editarProdutoRouter = require('./routes/editarProduto');
+const alterarSenhaRouter = require('./routes/alterarSenha');
 
 //Variaveis
 const app = express();
@@ -17,6 +20,9 @@ app.use(express.static(path.resolve("src", "public")));
 //Rotas
 app.use(homeRouter);
 app.use(produtoRouter);
+app.use(novoProdutoRouter)
+app.use(editarProdutoRouter)
+app.use(alterarSenhaRouter)
 
 //Escuta do Servidor Funcionando
 app.listen(port, () => console.log(`Servidor funcionando na porta ${port}`))
