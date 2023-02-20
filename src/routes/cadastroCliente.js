@@ -1,5 +1,5 @@
 const express = require('express');
-const ProdutoController = require('../controllers/cadastroClientecontroller');
+const cadastroClienteController = require('../controllers/cadastroClienteController');
 
 const router = express.Router();
 
