@@ -4,9 +4,12 @@ const path = require('path');
 
 const homeRouter = require('./routes/home');
 const produtoRouter = require('./routes/produto');
+
 const novoProdutoRouter = require('./routes/novoProduto');
 const editarProdutoRouter = require('./routes/editarProduto');
 const alterarSenhaRouter = require('./routes/alterarSenha');
+const carrinhoRouter = require('./routes/carrinho');
+const finalizarCompraRouter = require('./routes/finalizarCompra');
 
 //Variaveis
 const app = express();
@@ -23,6 +26,8 @@ app.use(produtoRouter);
 app.use(novoProdutoRouter)
 app.use(editarProdutoRouter)
 app.use(alterarSenhaRouter)
+app.use(carrinhoRouter);
+app.use(finalizarCompraRouter);
 
 //Escuta do Servidor Funcionando
 app.listen(port, () => console.log(`Servidor funcionando na porta ${port}`))
