@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/finalizar_compra.css">
+    <link rel="stylesheet" href="css/finalizar_compra.css">
+    <link rel="stylesheet" href="css/headerSimples_footer.css">
+    
     <title>Art Pet & Cia</title>
 </head>
 
 <body class="container">
    
-    <header class="container">
-        <img class="logomarca" src="./assets/img/logo/ArtPet&Cia.jpeg" alt="ArtPet&Cia">
-                
-        <div class="div_cadeado">
-            <img class="cadeado" src="./assets/img/icones/cadeado.png" alt="cadeado">
-            Ambiente Seguro
-        </div>
-    </header>
+    <%- include("./components/headerSimples.ejs") %>
 
     <main class="conteiner">
 
@@ -26,43 +21,69 @@
             <span>Selecione uma das formas de pagamento disponíveis para esta compra:</span>
         </div>
 
+        <nav>
         <div class="finalizar_cartao">
             
-            <form class="cartaoCredito">
-                <h3>Cartão de Crédito</h3>
-                <div class="input-form-cartao">
-                   <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número">
-                </div>
-                <div class="input-form-cartao">
-                    <input type="text" name="nome" id="nome" placeholder="Nome impresso no cartão">
-                </div>
-                <div class="input-form-cpf-validade">
-                    <input type="text" name="cpfCartao" id="cpfCartao" placeholder="CPF do titular">
-                    <input type="text" name="validadeCartao" id="validadeCartao" placeholder="Validade">
-                </div>
-                <div class="input-form-cvv-parcelas">
-                    <section class="input-form-cvv">
-                        <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
-                    </section>
+            
+            <div class="accordion-item">
+                <input class="inputAccordion" type="checkbox" name="check1" id="check1">
+                <label class="labelAccordion" for="check1">
+                    Cartão de Crédito
+                </label>
                 
-                    <section class="input-form-parcelas">
-                    <select name="parcelasCartao" id="parcelasCartao">
-                        <option selected disabled>Parcelas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    </section>
-                </div>
-
-            </form>
-            <img src="./assets/img/icones/—Pngtree—credit card flat icon_6845408.png">
+                                
+                <section>
+                    <div>
+                        <div class="input-form-cartao">
+                            <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número">
+                        </div>
+                        
+                        <div class="input-form-cartao">
+                            <input type="text" name="nome" id="nome" placeholder="Nome impresso no cartão">
+                        </div>
+                        
+                        <div class="input-form-cpf-validade">
+                            <input type="text" name="cpfCartao" id="cpfCartao" placeholder="CPF do titular">
+                            <input type="text" name="validadeCartao" id="validadeCartao" placeholder="Validade">
+                        </div>
+                        
+                        <div class="input-form-cvv-parcelas">
+                            <article class="input-form-cvv">
+                                <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
+                            </article>
+                        
+                            <article class="input-form-parcelas">
+                                <select name="parcelasCartao" id="parcelasCartao">
+                                    <option selected disabled>Parcelas</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="imgCard">
+                        <img src="img/icones/—Pngtree—credit card flat icon_6845408.png">
+                    </div>
+                </section>    
+            </div>
+            
         </div>
 
         <div class="finalizar_pix">
+            <div class="accordion-item">
+                <input class="inputAccordion" type="checkbox" name="check2" id="check2">
+                <label class="labelAccordion" for="check2">
+                    Pix
+                </label>
+                <h4>Pague na hora com Pix</h4>
+                                
+            <!--     <section>
+            
+
             <h3>Pix</h3>
             <h4>Pague na hora com Pix</h4>
-            
+           -->
             <section>
                 <ol>
                     <li>
@@ -73,11 +94,12 @@
                     </li>
                 </ol>
             </section>
+        
             
             <section >
                 <span><strong>O código Pix expira em 10 minutos.</strong></span>
             </section>
-            
+        </div>
         </div>
 
 
@@ -96,7 +118,7 @@
 
                 <div class="section_confirmarDadosPessoais">
                         <section>
-                            <img src="./assets/img/icones/do-utilizador.svg">
+                            <img src="img/icones/do-utilizador.svg">
                         </section>
                         <section>
                             <article class="confirmarNome">
@@ -112,7 +134,7 @@
                             </article>
                         </section>
                         <section>
-                            <img src="./assets/img/icones/lapis.svg">
+                            <img src="img/icones/lapis.svg">
                         </section>
                 </div>
 
@@ -122,7 +144,7 @@
 
                 <div class="finalizar_confirmarEndereco">
                     <section>
-                        <img src="./assets/img/icones/do-utilizador.svg">
+                        <img src="img/icones/do-utilizador.svg">
                     </section>
                     <section>
                         <article class="confirmarRua">
@@ -136,7 +158,7 @@
                         </article>
                     </section>
                     <section>
-                        <img src="./assets/img/icones/lapis.svg">
+                        <img src="img/icones/lapis.svg">
                     </section>
                 </div>
             </div>
@@ -166,50 +188,10 @@
                 </section>
             </div>
         </div>
+    </nav>
     </main>
 
-   
-
-
-    <footer class="container">
-        <div class="footer_link">
-            <h4><strong>Sobre Nós</strong></h4>
-            <a href="">Quem Somos</a>
-            <a href="">Trabalhe Conosco</a>
-        </div>
-        <div class="footer_link">
-            <h4><strong>Dúvidas</strong></h4>
-            <a href="">Fale Conosco</a>
-            <a href="">Política de Privacidade</a>
-        </div>
-        <div class="footer_redes">
-            <h4><strong>Redes Sociais</strong></h4> 
-            <div>
-                <a href="https://www.facebook.com" target="_blank"><img src="./assets/img/icones/social-media-facebook.webp" alt="facebook"></a>
-                <a href="https://www.instagram.com" target="_blank"><img src="./assets/img/icones/social-media-instagram.webp" alt="instagram"></a>
-                <a href="https://www.twitter.com" target="_blank"><img src="./assets/img/icones/social-media-twitter.webp" alt="twitter"></a>
-                <a href="https://www.youtube.com" target="_blank"><img src="./assets/img/icones/social-media-youtube.webp" alt="youtube"></a> 
-            </div>
-        </div>
-        <div class="footer_pagamentos">
-            <h4><strong>Formas de Pagamento</strong></h4>
-            <div>
-                <img src="./assets/img/icones/pix-transparent.svg" alt="pix" style="background-color: lightgray;">
-                <img src="./assets/img/icones/visa-logo.webp" alt="visa">
-                <img src="./assets/img/icones/mastercard-logo.webp" alt="master">
-                <img src="./assets/img/icones/hypercard-logo.webp" alt="hiper">
-                <img src="./assets/img/icones/elo-logo.webp" alt="elo">
-                <img src="./assets/img/icones/dinersclub-logo.webp" alt="diners">
-                <img src="./assets/img/icones/barcode-icon.webp" alt="boleto" style="background-color: lightgray;">
-            </div>
-        </div>
-        <div class="footer_app">
-            <h4><strong>Baixe Nosso App</strong></h4>
-            <a href="" target="_blank"><img src="./assets/img/icones/app-store.webp" alt="app-store"></a>
-            <a href="" target="_blank"><img src="./assets/img/icones/google-play.webp" alt="google-play"></a>
-        </div>
-    </footer>
-
+    <%- include("./components/footer.ejs") %>
 
 </body>
 </html>
