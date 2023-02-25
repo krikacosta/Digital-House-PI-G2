@@ -13,6 +13,7 @@ const editarProdutoRouter = require('./routes/editarProduto');
 const alterarSenhaRouter = require('./routes/alterarSenha');
 const carrinhoRouter = require('./routes/carrinho');
 const finalizarCompraRouter = require('./routes/finalizarCompra');
+const cadastrarNovoEndRouter = require('./routes/cadastarNovoEnd');
 
 
 //Variaveis
@@ -37,6 +38,7 @@ app.use(editarProdutoRouter)
 app.use(alterarSenhaRouter)
 app.use(carrinhoRouter);
 app.use(finalizarCompraRouter);
+app.use(cadastrarNovoEndRouter);
 
 
 //Escuta do Servidor Funcionando
