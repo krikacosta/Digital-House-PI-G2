@@ -13,7 +13,7 @@ const editarProdutoRouter = require('./routes/editarProduto');
 const alterarSenhaRouter = require('./routes/alterarSenha');
 const carrinhoRouter = require('./routes/carrinho');
 const finalizarCompraRouter = require('./routes/finalizarCompra');
-const cadastrarNovoEndRouter = require('./routes/cadastarNovoEnd');
+const cadastrarNovoEndRouter = require('./routes/cadastrarNovoEnd');
 
 
 //Variaveis
