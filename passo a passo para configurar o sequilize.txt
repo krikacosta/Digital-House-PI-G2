@@ -1,0 +1,53 @@
+# primeiro comando instalando módulo sequilize
+
+npm i sequelize mysql2 sequelize-cli
+
+# segundo comando configurando o sequelize
+
+npx sequelize init
+
+# copiar o arquivo sequelizesrv na raiz do projeto
+
+# terceiro comando 
+
+npm i dotenv
+
+# configuração do arquivo dotenv para acesso ao banco de dados mysql2
+
+DB_USER="root"
+DB_PASS="@@Cb200311"
+DBN_NAME="PETCIA"       <= aqui altero para PETCIA3 para a criação do Banco de Dados com o nome PETCIA3 para preservar o que foi criado
+DB_HOST="127.0.0.1"
+DB_DIALECT="mysql"
+DB_PORT=3306
+
+# importante inserir o comando abaixo no arquivo .gitignore, assim qdo subir para o github ninguém terá os dados de acesso ao Banco de Dados
+
+*.env
+
+# criado a pasta src/database e copiado o arquivo config.js
+
+# conteúdo do arquivo config.js
+require('dotenv').config();
+
+//Passando as variáveis de ambiente
+module.exports = {
+  "username": process.env.DB_USER,
+  "password": process.env.DB_PASS,
+  "database": process.env.DB_NAME,
+  "host": process.env.DB_HOST,
+  "dialect": process.env.DB_DIALECT,
+  "port": process.env.DB_PORT
+}
+
+# comentar as linhas abaixo e inserir a última linha de comando no arquivo models/index.js
+
+// const env = process.env.NODE_ENV || 'development';
+// const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../database/config.js');
+
+# comando para criar um banco de dados no mysql através do sequelize
+
+npx sequelize db:create
+
+
