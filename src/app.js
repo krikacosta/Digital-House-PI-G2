@@ -18,7 +18,7 @@ const cadastrarNovoEndRouter = require('./routes/cadastrarNovoEnd');
 
 //Variaveis
 const app = express();
-const port = 3000;
+const port = 3030;
 
 //Configurações / Middlewares
 app.set('view engine', 'ejs');
