@@ -1,3 +1,5 @@
+https://wendelcutrim.notion.site/Sequelize-dcdcda93223d4650a886f2e1b84a70dd
+
 # primeiro comando instalando módulo sequilize
 
 npm i sequelize mysql2 sequelize-cli
@@ -49,5 +51,8 @@ const config = require(__dirname + '/../database/config.js');
 # comando para criar um banco de dados no mysql através do sequelize
 
 npx sequelize db:create
+
+npx sequelize db:migrate
+
 
 
