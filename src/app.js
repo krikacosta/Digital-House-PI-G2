@@ -40,7 +40,8 @@ app.use(alterarSenhaRouter)
 app.use(carrinhoRouter);
 app.use(finalizarCompraRouter);
 app.use(cadastrarNovoEndRouter);
-app.use(adminRouter);
+// app.use(adminRouter);
+app.use("/admin", adminRouter); // /admin/
 
 
 //Escuta do Servidor Funcionando

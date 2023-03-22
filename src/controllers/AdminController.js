@@ -5,9 +5,10 @@ console.log("página admin")
 
 const AdminController = {
     listProdutos: (req, res) => {
+        const produto = Produto.findAll();
         // const produtos = Produto.findAll();
 
-        return res.render("admin/produtos/index", { produtos })
+        return res.render("admin/produtos/index", { produto })
     },
 
     showCreateProduto: (req, res) => {
