@@ -1,5 +1,5 @@
 
-const Servico = require("../model/Servico")
+const { Usuario } = require("../../models")
 
 console.log("Login Cliente")
 const loginClienteController = {

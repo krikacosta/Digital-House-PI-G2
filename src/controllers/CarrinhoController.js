@@ -1,4 +1,4 @@
-const Servico = require("../model/Servico")
+const {Pedido} = require("../../models")
 
 console.log("página carrinho")
 const CarrinhoController = {

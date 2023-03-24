@@ -1,14 +1,39 @@
-const Produto = require("../model/Produto");
-
+const { Produto } = require("../../models");
+const { Categoria } = require("../../models");
 
 console.log("página admin")
 
 const AdminController = {
-    listProdutos: (req, res) => {
-        const produto = Produto.findAll();
+
+    listProdutos: async (req, res) => {
+
+        // showHome: async (req, res) => {
+        const url = req.originalUrl;
+        const produtos = await Produto.findAll(
+            // {
+            //     include: {
+            //         model: Categoria,
+            //         as: 'categoria'
+            //     }
+            // }
+        )
+        console.log(produtos)
+
+
+
+        return res.render('admin/produtos/index', { url, produtos });
+    },
+
+    showHome: async (req, res) => {
+        // listProdutos: async (req, res) => {
+        const url = req.originalUrl;
+
+        // const produtos = await Produto.findAll();
+        const produtos = await res.Produto;
+        console.log(produtos)
         // const produtos = Produto.findAll();
 
-        return res.render("admin/produtos/index", { produto })
+        return res.render("admin/produtos", { produtos })
     },
 
     showCreateProduto: (req, res) => {

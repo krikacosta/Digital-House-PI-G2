@@ -12,7 +12,7 @@ module.exports = {
           allowNull: false,
           primaryKey: true
         },
-        CATEGORIA_ID: {
+        CATEGORIA_NOME: {
           type: Sequelize.DataTypes.STRING(50),
           allowNull: false
         },

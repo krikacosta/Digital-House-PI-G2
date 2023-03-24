@@ -1,4 +1,4 @@
-const Servico = require("../model/Servico")
+const Produto = require("../../models/Produto")
 
 console.log("página home")
 const HomeController = {
