@@ -1,4 +1,4 @@
-const Servico = require("../model/Servico")
+const { Usuario } = require("../../models")
 
 console.log("página alterar senha")
 const AlterarSenhaController = {

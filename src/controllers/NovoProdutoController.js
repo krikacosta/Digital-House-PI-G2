@@ -1,4 +1,4 @@
-const Servico = require("../model/Servico")
+const {Produto} = require("../../models")
 
 console.log("página novo produto")
 const NovoProdutoController = {

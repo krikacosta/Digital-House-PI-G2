@@ -1,4 +1,4 @@
-const Servico = require("../model/Servico")
+const { Endereco } = require("../../models")
 
 console.log("página cadastrar endereço")
 const CadastrarNovoEndController = {

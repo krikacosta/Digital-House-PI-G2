@@ -1,4 +1,5 @@
 //Importações
+
 const express = require('express');
 const path = require('path');
 const homeRouter = require('./routes/home');
@@ -16,6 +17,8 @@ const finalizarCompraRouter = require('./routes/finalizarCompra');
 const cadastrarNovoEndRouter = require('./routes/cadastrarNovoEnd');
 const adminRouter = require('./routes/admin');
 
+// import db from './src/config.js';
+// const db = require('./src/config.js');
 
 //Variaveis
 const app = express();
@@ -25,6 +28,8 @@ const port = 3030;
 app.set('view engine', 'ejs');
 app.set("views", path.resolve("src", "views"));
 app.use(express.static(path.resolve("src", "public")));
+
+app.use(express.json())
 
 //Rotas
 app.use(homeRouter);
@@ -43,7 +48,8 @@ app.use(cadastrarNovoEndRouter);
 // app.use(adminRouter);
 app.use("/admin", adminRouter); // /admin/
 
-
+// Verifica a conexão com o DB
+// db.sync(() => console.log("Banco de Dados conectado: ${process.env.DB_NAME}"));
 //Escuta do Servidor Funcionando
 app.listen(port, () => console.log(`Servidor funcionando na porta ${port}`))
 // npm run dev -> nodemon | npm start -> node

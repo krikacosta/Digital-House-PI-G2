@@ -1,5 +1,5 @@
 
-const Servico = require("../model/Servico")
+const {Pedido} = require("../../models")
 
 console.log("Consultar Pedidos")
 const consultar_pedidosController = {

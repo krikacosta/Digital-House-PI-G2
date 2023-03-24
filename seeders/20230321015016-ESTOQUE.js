@@ -9,7 +9,7 @@ module.exports = {
         PRODUTO_ID: 1,         // ALTERAR CONFORME ID DO PRODUTO CRIADO NA TABELA PRODUTOS       
         NOME_COR: 'Vermelho',  
         TAMANHO: 'P', 
-        ESTOQUE_QTD: '20',
+        ESTOQUE_QTD: 20,
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },

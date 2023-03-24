@@ -1,9 +1,9 @@
-const Servico = require("../model/Servico")
+const {Produto} = require("../../models")
 
 console.log("página produto")
 const ProdutoController = {
-    showProdutoPage: (req, res) => {
-        return res.render("produto");
+    showProdutoPage: async (req, res) => {
+        return await res.render("produto");
     },
 
 }

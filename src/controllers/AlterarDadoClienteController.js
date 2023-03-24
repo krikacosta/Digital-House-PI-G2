@@ -1,9 +1,10 @@
-const Servico = require("../model/Servico")
+const { Usuario }  = require("../../models")
 
 console.log("página alterar dado cliente")
 const AlterarDadoClienteController = {
-    showAlterarDadoClientePage: (req, res) => {
-        return res.render("alterarDadoCliente");
+    showAlterarDadoClientePage: async (req, res) => {
+        const cliente = await Cliente.findAll()
+        return await res.render("alterarDadoCliente", {cliente});
     },
 
 }

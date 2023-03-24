@@ -7,32 +7,32 @@ module.exports = {
     await queryInterface.bulkInsert('Categorias', 
     [
       {
-      CATEGORIA_ID: 'CAES',
+      CATEGORIA_NOME: 'CAES',
       CREATED_At: (new Date()).toJSON().substring(0,19),
       UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 'GATOS',
+        CATEGORIA_NOME: 'GATOS',
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 'PEIXES',
+        CATEGORIA_NOME: 'PEIXES',
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 'AVES',
+        CATEGORIA_NOME: 'AVES',
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 'OUTROS PETS',
+        CATEGORIA_NOME: 'OUTROS PETS',
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 'ACESSÓRIOS',
+        CATEGORIA_NOME: 'ACESSÓRIOS',
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       }

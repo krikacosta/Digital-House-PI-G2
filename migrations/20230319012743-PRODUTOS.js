@@ -25,7 +25,7 @@ module.exports = {
           allowNull: true
         },
         PRECO: {
-          type: Sequelize.DataTypes.DECIMAL(2),
+          type: Sequelize.DataTypes.DECIMAL(5,2),
           allowNull: false
         },
         IMAGEM_URL: {

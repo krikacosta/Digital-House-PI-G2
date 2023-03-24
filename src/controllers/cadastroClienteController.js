@@ -1,5 +1,4 @@
-
-const Servico = require("../model/Servico")
+const { Ususario } = require("../../models")
 
 console.log("Cadadastro Cliente")
 const cadastroClienteController = {
