@@ -86,17 +86,19 @@
         </nav> 
         <section class="produtos container">
 
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/bandanas/images (71).jpeg" alt="bandana">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Bandanas Pets</p>
-                        <spam><strong>R$ 18,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
+            <% for(let produto of produtos) { %>
+                <article>
+                    <a href="/produto/<%=produto.ID%>" target="_blank">
+                        <img src="<%= produto.IMAGEM_URL%>" alt="<%= produto.NOME_PRODUTO%>">
+                        <div class="detalhe-produto">
+                            <p class="titulo-detalhe-produto"><%= produto.NOME_PRODUTO%></p>
+                            <spam><strong>R$ <%= produto.PRECO.toLocaleString('pt-BR', {style: 'decimal', maximumFractionDigits: 2})%></strong></spam>
+                        </div>
+                    </a>
+                </article>
+                
+            <%}%>
+            <!-- <article>
                 <a href="./produto.html" target="_blank">
                     <img src="img/fotos_produtos/caminha_de_pallet/images (45).jpeg" alt="caminha de pallet">
                     <div class="detalhe-produto">
@@ -164,7 +166,7 @@
                         <spam><strong>R$ 70,00</strong></spam>
                     </div>
                 </a>
-            </article>
+            </article> -->
 
         </section>
     </main>
