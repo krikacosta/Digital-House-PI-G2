@@ -1,5 +1,5 @@
 const { Produto } = require("../../models");
-const { Categoria } = require("../../models");
+// const { Categoria } = require("../../models");
 
 console.log("página admin")
 

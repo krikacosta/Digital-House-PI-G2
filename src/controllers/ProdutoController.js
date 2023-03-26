@@ -1,5 +1,5 @@
 const {Produto} = require("../../models")
-// const {Categoria} = require("../../models")
+const {Categoria} = require("../../models")
 const {Estoque} = require("../../models")
 
 console.log("página produto")
@@ -13,7 +13,7 @@ const ProdutoController = {
 
         const estoque_produtos = await Estoque.findAll()
 
-        // const categorias = await Categoria.findAll()
+        const lista_categorias = await Categoria.findAll()
         // itens = []
         // produtos.forEach(element => {
         //     itens.push(element)
@@ -37,7 +37,7 @@ const ProdutoController = {
         // console.log(identificaEstoque)
 
 
-        return res.render('produto', { produto, produtos, estoque_produtos });
+        return res.render('produto', { produto, produtos, estoque_produtos, lista_categorias });
         // const produto = await Produto.findbyPK(produto.ID)
         // return res.render("produto",{produto});
     }
