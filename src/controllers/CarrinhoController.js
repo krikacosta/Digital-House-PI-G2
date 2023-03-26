@@ -2,8 +2,12 @@ const {Pedido} = require("../../models")
 
 console.log("página carrinho")
 const CarrinhoController = {
-    showCarrinhoPage: (req, res) => {
-        return res.render("carrinho");
+    showCarrinhoPage: async (req, res) => {
+        const { id } = req.params;
+
+        const carrinho = await Pedido.findByPk(id)
+
+        return res.render("carrinho", {carrinho});
     },
 
 }
