@@ -6,25 +6,26 @@ console.log("página produto")
 const ProdutoController = {
     showProdutoPage: async (req, res) => {
         const { id } = req.params;
-        console.log("estou na Produto controller show produto page")
-        console.log(id)
-        console.log(Categoria)
+
         const produto = await Produto.findByPk(id)
 
         const produtos = await Produto.findAll()
 
-        itens = []
-        produtos.forEach(element => {
-            itens.push(element)
-        });
+        const estoque_produtos = await Estoque.findAll()
 
-        itens.forEach(item => {
-            console.log(item)
-        })
+        const lista_categorias = await Categoria.findAll()
+        // itens = []
+        // produtos.forEach(element => {
+        //     itens.push(element)
+        // });
+
+        // itens.forEach(item => {
+        //     console.log(item)
+        // })
 
         // console.log(itens[1])
         // const categoria = await Categoria.findByPk(id)
-        let tamanhos = []
+        // let tamanhos = []
 
         // const identificaEstoque = await Estoque.findAll({
         //       produto_id: 1,
@@ -36,7 +37,7 @@ const ProdutoController = {
         // console.log(identificaEstoque)
 
 
-        return res.render('produto', { produto, produtos });
+        return res.render('produto', { produto, produtos, estoque_produtos, lista_categorias });
         // const produto = await Produto.findbyPK(produto.ID)
         // return res.render("produto",{produto});
     }

@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('ESTOQUE', 
+    await queryInterface.bulkInsert('ESTOQUES', 
     [
       {
         PRODUTO_ID: 1,         // ALTERAR CONFORME ID DO PRODUTO CRIADO NA TABELA PRODUTOS       
@@ -253,6 +253,22 @@ module.exports = {
         ESTOQUE_QTD: 25, 
         CREATED_At: (new Date()).toJSON().substring(0,19),
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
+      },
+      {
+        PRODUTO_ID: 18,
+        NOME_COR: 'Verde',
+        TAMANHO: '290ml', 
+        ESTOQUE_QTD: 25, 
+        CREATED_At: (new Date()).toJSON().substring(0,19),
+        UPDATED_AT: (new Date()).toJSON().substring(0,19)
+      },
+      {
+        PRODUTO_ID: 19,
+        NOME_COR: 'Variados',
+        TAMANHO: 'Kit', 
+        ESTOQUE_QTD: 25, 
+        CREATED_At: (new Date()).toJSON().substring(0,19),
+        UPDATED_AT: (new Date()).toJSON().substring(0,19)
       }
 
   ], {});
@@ -260,7 +276,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('ESTOQUE', null, {});
+    await queryInterface.bulkDelete('ESTOQUES', null, {});
      
   }
 };
