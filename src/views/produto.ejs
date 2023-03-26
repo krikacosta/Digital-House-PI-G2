@@ -43,7 +43,7 @@
             <section class="produto_preco">
                 <div>
                     <p>Escolha uma opção</p>
-                    <% for(let item of estoque_produtos) { %>
+                    <% for(var item of estoque_produtos) { %>
                         <section class="opcoes">
                             <% if(item.PRODUTO_ID == produto.ID) {%>
                                 <button><%= item.TAMANHO %> - <%= item.NOME_COR %></button>
@@ -58,7 +58,20 @@
                         </div>
                     </section>
                     <section class="adiciona_carrinho">
-                        <button>Adicionar ao Carrinho</button>
+
+                        <form action="/carrinho/adicionar" method="POST">
+                            <input type="hidden" name="produto_id" value="<%= produto.ID %>" />
+                            <input type="hidden" name="produto_nome" value="<%= produto.NOME_PRODUTO %>" />
+                            <input type="hidden" name="produto_img" value="<%= produto.IMAGEM_URL %>" />
+                            <input type="hidden" name="produto_preco" value="<%= produto.PRECO %>" />
+                            <input type="hidden" name="produto_tamanho" value="<%= item.TAMANHO %>" />
+                            <input type="hidden" name="produto_cor" value="<%= item.NOME_COR %>" />
+
+                            <button type="submit">
+                                Adicionar ao Carrinho
+                            </button>
+                        </form>
+
                     </section>
                     <section>
                         <p>Calcular Frete e Prazo</p>
@@ -75,7 +88,7 @@
         <section class="produtos container">
 
             <% for(let produto_item of produtos) { %>
-                <% if (produto.ID != produto_item.ID) { %>
+                <% if (produto.ID != produto_item.ID && produto.CATEGORIA_ID == produto_item.CATEGORIA_ID) { %>
                     <article>
                         <a href="/produto/<%=produto_item.ID%>" target="_blank">
                             <img src="<%= produto_item.IMAGEM_URL%>" alt="<%= produto_item.NOME_PRODUTO%>">
