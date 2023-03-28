@@ -14,6 +14,17 @@ const ProdutoController = {
         const estoque_produtos = await Estoque.findAll()
 
         const lista_categorias = await Categoria.findAll()
+
+        return res.render('produto', { produto, produtos, estoque_produtos, lista_categorias });
+       
+    }
+
+}
+
+module.exports = ProdutoController;
+
+
+
         // itens = []
         // produtos.forEach(element => {
         //     itens.push(element)
@@ -37,15 +48,7 @@ const ProdutoController = {
         // console.log(identificaEstoque)
 
 
-        return res.render('produto', { produto, produtos, estoque_produtos, lista_categorias });
-        // const produto = await Produto.findbyPK(produto.ID)
+
+
+         // const produto = await Produto.findbyPK(produto.ID)
         // return res.render("produto",{produto});
-    }
-
-}
-
-module.exports = ProdutoController;
-
-
-
-

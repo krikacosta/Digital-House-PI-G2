@@ -65,12 +65,14 @@ const CarrinhoController = {
   
     addCart: (req, res) => {
       const { produto_id, produto_nome, produto_img, produto_preco, produto_tamanho, produto_cor } = req.body;
-      const produto = { produto_id, produto_nome, produto_img, produto_preco, produto_tamanho, produto_cor };
+      // console.log(req.body)
+      // const produto = { produto_id, produto_nome, produto_img, produto_preco, produto_tamanho, produto_cor };
       
-      req.carrinho = req.carrinho || [];
-      req.carrinho.push(produto);
+      // req.carrinho = req.carrinho || [];
+      // req.carrinho.push(produto);
   
-      return res.redirect('/carrinho');
+      // return res.render('carrinho', { produto });
+      return res.render('carrinho', { produto: req.body }); 
     }
   };
 

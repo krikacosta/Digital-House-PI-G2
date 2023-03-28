@@ -30,6 +30,7 @@ app.set("views", path.resolve("src", "views"));
 app.use(express.static(path.resolve("src", "public")));
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 //Rotas
 app.use(homeRouter);
