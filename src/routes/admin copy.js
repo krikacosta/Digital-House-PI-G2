@@ -4,7 +4,7 @@ const AdminController = require("../controllers/AdminController");
 
 
 // router.get("/produtos/index", AdminController.showHome)
-router.get("/produtos/", AdminController.listProdutos);
+router.get("/produtos/index", AdminController.listProdutos);
 router.get("/produtos/cadastrar", AdminController.showCreateProduto);
 router.post("/produtos/cadastrar", AdminController.storeProduto);
 router.get("/produtos/:id/editar", AdminController.showEditProduto);
