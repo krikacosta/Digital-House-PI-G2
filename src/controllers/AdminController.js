@@ -17,7 +17,7 @@ const AdminController = {
             //     }
             // }
         )
-        console.log(produtos)
+       // console.log(produtos)
 
 
 
@@ -70,13 +70,15 @@ const AdminController = {
         return res.redirect("/admin/produtos")
     },
 
-    deleteProduto: (req, res) => {
+    deleteProduto: async (req, res) => {
         const { ID } = req.params;
+       
+     const resultado = await Produto.destroy({where:{ID}});
 
-        Produto.destroy(ID);
-
-        return res.redirect("/admin/produtos");
-    }
+     
+       console.log(resultado)
+        return res.redirect("/admin/produtos")
+    },
 }
 
 module.exports = AdminController;
