@@ -59,13 +59,13 @@
                     </section>
                     <section class="adiciona_carrinho">
 
-                        <form action="/carrinho/adicionar" method="POST">
-                            <input type="hidden" name="produto_id" value="<%= produto.ID %>" />
-                            <input type="hidden" name="produto_nome" value="<%= produto.NOME_PRODUTO %>" />
-                            <input type="hidden" name="produto_img" value="<%= produto.IMAGEM_URL %>" />
-                            <input type="hidden" name="produto_preco" value="<%= produto.PRECO %>" />
-                            <input type="hidden" name="produto_tamanho" value="<%= item.TAMANHO %>" />
-                            <input type="hidden" name="produto_cor" value="<%= item.NOME_COR %>" />
+                        <form action="/carrinho/adicionar" method="post">
+                            <input type="hidden" id="produto_id" name="produto_id" value="<%= produto.ID %>" />
+                            <input type="hidden" id="produto_nome" name="produto_nome" value="<%= produto.NOME_PRODUTO %>" />
+                            <input type="hidden" id="produto_img" name="produto_img" value="<%= produto.IMAGEM_URL %>" />
+                            <input type="hidden" id="produto_preco" name="produto_preco" value="<%= produto.PRECO %>" />
+                            <input type="hidden" id="produto_tamanho" name="produto_tamanho" value="<%= item.TAMANHO %>" />
+                            <input type="hidden" id="produto_cor" name="produto_cor" value="<%= item.NOME_COR %>" />
 
                             <button type="submit">
                                 Adicionar ao Carrinho
