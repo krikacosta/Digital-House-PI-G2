@@ -28,9 +28,15 @@
                     <a href="limparCarrinho" class="limparCarrinho">Limpar Carrinho</a>
                 </section>
 
+                <div class="primeiraColuna">
+                    <section class="section_itensCompras">
+                      <h2>Produtos</h2>
+                      <a href="/carrinho/limpar" class="limparCarrinho">Limpar Carrinho</a>
+                    </section>
+                  
                      <div class="wrapper">
-                        <div class="box_img"><img src="img/fotos_produtos/caminha_de_pallet/images (44).jpeg" alt="Cama Pallet King"></div>
-                        <div class="box_descriction"><h2>Cama Pallet Modelo King</h2></div>
+                        <div class="box_img"><img src="<%= produto.produto_img %>" alt="<%= produto.produto_nome %>"></div>
+                        <div class="box_descriction"><h2><%= produto.produto_nome %></h2></div>
                         <div class="box_lixeira"> <img src="img/icones/lixo.svg" alt="Lixeira" class="img_lixeira"></div>
                         <div class="box_qtde">
                             <button>-</button>
@@ -38,7 +44,7 @@
                             <button>+</button>
                         </div>
                      </div>
-
+                    
                      <div class="cep">
                             <h2>Frete e Prazo</h2>
                         
@@ -47,7 +53,7 @@
                             <label class="label_cep" for="cep">CEP</label>
                             <input class="input_cep" type="text" name="cep" id="cep">
                             <button class="submit_cep" type="submit">Buscar</button>
-                        </div>
+                        </div> 
                      
 
                 
@@ -61,7 +67,7 @@
                 <section class="section_resumoCompras">
                     <article class="final_produtos">
                         <span>Produto</span>
-                        <span>R$ 190,00</span>
+                        <span><%= produto.produto_preco %></span>
                     </article>
                     <article class="final_frete">
                         <span>Frete</span>
@@ -72,10 +78,13 @@
                         <span>R$ 200,00</span>
                     </article>
                     <article>
-                        <button class="button_finalizar_compra" type="submit">Finalizar Compra</button>
+                        
+                        <button class="button_finalizar_compra" type="submit">
+                            Finalizar Compra
+                        </button>
                     </article>
                     <article>
-                        <a href="" class="button_continuar_compra">Comprar mais produtos</a>
+                        <a href="/" class="button_continuar_compra">Comprar mais produtos</a>
                     </article>
                 </section>
                 

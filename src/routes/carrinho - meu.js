@@ -8,7 +8,6 @@ router.get('/carrinho', CarrinhoController.showCarrinhoPage);
 router.post('carrinho/adicionar', CarrinhoController.addCart);
 // router.get('carrinho/adicionar', CarrinhoController.addCart);
 router.get('/carrinho/:id', CarrinhoController.showCarrinhoPage);
-router.post('/carrinho/:id/deletar', CarrinhoController.removeCart);
 
 
 module.exports = router;
