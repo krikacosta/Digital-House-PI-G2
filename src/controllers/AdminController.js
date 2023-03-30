@@ -52,10 +52,10 @@ const AdminController = {
         return res.redirect("/admin/produtos")
     },
 
-    showEditProduto: (req, res) => {
+    showEditProduto: async (req, res) => {
         const { ID } = req.params;
 
-        const produto = Produto.findByPk(id);
+        const produto = await Produto.findByPk(id);
 
         return res.render("admin/produtos/editar", { produto })
     },
@@ -71,14 +71,16 @@ const AdminController = {
     },
 
     deleteProduto: async (req, res) => {
-        const { ID } = req.params;
-       
-     const resultado = await Produto.destroy({where:{ID}});
+        const { id } = req.params
 
-     
-       console.log(resultado)
-        return res.redirect("/admin/produtos")
-    },
-}
+        await Produto.destroy({
+            where: { id }
+        })
+        
+        return res.redirect('/admin/produtos/index')
+    }
+};
 
 module.exports = AdminController;
+
+
