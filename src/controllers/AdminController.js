@@ -40,24 +40,28 @@ const AdminController = {
         return res.render("admin/produtos/cadastrar")
     },
 
-    storeProduto: (req, res) => {
+    storeProduto: async (req, res) => {
         const { CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO } = req.body;
 
-        console.log(req.body)
+        const produto = { CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO };
 
-        const produto = { CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO }
+        console.log(produto);
 
-        Produto.create(produto);
+        await Produto.create(produto);
 
         return res.redirect("/admin/produtos")
     },
 
     showEditProduto: async (req, res) => {
-        const { ID } = req.params;
+        const { id } = req.params;
 
-        const produto = await Produto.findByPk(id);
+        const produtoencontrado = await Produto.findOne({
+            where: {
+                id
+            }
+        })
 
-        return res.render("admin/produtos/editar", { produto })
+        return res.render("admin/produtos/editar", { Produto: produtoencontrado });
     },
 
     updateProduto: (req, res) => {
@@ -72,12 +76,10 @@ const AdminController = {
 
     deleteProduto: async (req, res) => {
         const { id } = req.params
-
         await Produto.destroy({
             where: { id }
         })
-        
-        return res.redirect('/admin/produtos/index')
+        return res.redirect('/admin/produtos')
     }
 };
 
