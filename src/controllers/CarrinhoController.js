@@ -39,7 +39,7 @@ const CarrinhoController = {
     },
 
     removeCart: (req, res) => {
-      let carrinho = [];
+      // let carrinho = [];
       const { id } = req.params;
       // let { carrinho } = req.body;
       carrinho = JSON.parse(req.body.carrinho);
