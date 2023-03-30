@@ -41,13 +41,23 @@ const AdminController = {
     },
 
     storeProduto: async (req, res) => {
-        const { CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO } = req.body;
+        const { categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, sem_estoque, ativo } = req.body;
 
-        const produto = { CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO };
+        
 
-        console.log(produto);
+        
 
-        await Produto.create(produto);
+        await Produto.create({
+            CATEGORIA_ID: categoria_id,
+            NOME_PRODUTO: nome_produto,
+            DESCRICAO: descricao,
+            PRECO: preco,
+            IMAGEM_URL: imagem_url,
+            PROMOCAO: promocao,
+            DESTAQUE: destaque,
+            SEM_ESTOQUE: sem_estoque,
+            ATIVO: ativo
+        });
 
         return res.redirect("/admin/produtos")
     },
@@ -64,12 +74,27 @@ const AdminController = {
         return res.render("admin/produtos/editar", { Produto: produtoencontrado });
     },
 
-    updateProduto: (req, res) => {
-        const { ID, CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO } = req.body;
+    updateProduto: async (req, res) => {
+        
+        const {categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, sem_estoque, ativo } = req.body;
+        const { id } = req.params
 
-        const produtoAtualizado = { ID, CATEGORIA_ID, NOME_PRODUTO, DESCRICAO, PRECO, IMAGEM_URL, PROMOCAO, DESTAQUE, SEM_ESTOQUE, ATIVO };
-
-        Produto.update(ID, produtoAtualizado);
+        const produtoAtualizado = { 
+            CATEGORIA_ID: categoria_id,
+            NOME_PRODUTO: nome_produto,
+            DESCRICAO: descricao,
+            PRECO: preco,
+            IMAGEM_URL: imagem_url,
+            PROMOCAO: promocao,
+            DESTAQUE: destaque,
+            SEM_ESTOQUE: sem_estoque,
+            ATIVO: ativo };
+       
+        console.log(produtoAtualizado);
+       
+        await Produto.update(produtoAtualizado, {
+            where: { id }
+        } )
 
         return res.redirect("/admin/produtos")
     },

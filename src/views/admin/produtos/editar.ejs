@@ -29,7 +29,7 @@
                           
         </div>
     
-    <form class="editarProduto">
+    <form action="/admin/produtos/<%= Produto.ID %>/editar?_method=PUT" method="POST">
 
         <div class="gridNovoProd">
             <div class="primeiraColuna">
@@ -44,13 +44,16 @@
                 <input type="number" class="form-control" name="preco" id="preco" value="<%= Produto.PRECO %>">
 
                 <label for="imagem_url">Imagem Url</label>
-                <input type="text" class="form-control" name="imagem_url" id="imagem_url" value="<%= Produto.IMAGEM_URL %>">
+                
+                <input type="imagem_url" class="form-control" name="imagem_url" id="imagem_url" value="<%= Produto.IMAGEM_URL %>">
+                                    <!-- <textarea name="imagem_url" id="imagem_url" rows="5" cols="33"><%= Produto.IMAGEM_URL %></textarea> -->
+            
                 <img
                 style="width: 100px; height: 100px"
                 src="<%= Produto.IMAGEM_URL %>"
                 alt="<%= Produto.NOME_PRODUTO%>"
             />
-
+        
             </div>
             
             <div class="segundaColuna">							
@@ -66,6 +69,8 @@
 
                 <label for="ativo">Ativo</label>
                 <input type="number" class="form-control" name="ativo" id="ativo" value="<%= Produto.ATIVO %>">
+
+                <input type="hidden" class="form-control" name="id" id="id"	value="<%= Produto.ID %>">
             
             </div>
             

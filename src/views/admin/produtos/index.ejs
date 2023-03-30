@@ -74,7 +74,7 @@
 							<td><%= produto.CATEGORIA_ID %></td>
 							<td><%= produto.NOME_PRODUTO %></td>
 							<td><%= produto.DESCRICAO %></td>
-							<td><%= produto.PRECO %></td>
+							<td><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></td>
 							<td>
 								<img
 									style="width: 100px; height: 100px"

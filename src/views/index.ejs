@@ -95,7 +95,7 @@
                             <img src="<%= produto.IMAGEM_URL%>" alt="<%= produto.NOME_PRODUTO%>">
                             <div class="detalhe-produto">
                                 <p class="titulo-detalhe-produto"><%= produto.NOME_PRODUTO%></p>
-                                <spam><strong>R$ <%= produto.PRECO.toLocaleString('pt-BR', {style: 'decimal', maximumFractionDigits: 2})%></strong></spam>
+                                <spam><strong><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></strong></spam>
                             </div>
                         </a>
                     </article>
@@ -105,7 +105,7 @@
                             <img src="<%= produto.IMAGEM_URL%>" alt="<%= produto.NOME_PRODUTO%>">
                             <div class="detalhe-produto">
                                 <p class="titulo-detalhe-produto"><%= produto.NOME_PRODUTO%></p>
-                                <spam><strong>R$ <%= produto.PRECO.toLocaleString('pt-BR', {style: 'decimal', maximumFractionDigits: 2})%></strong></spam>
+                                <spam><strong><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></strong></spam>
                             </div>
                         </a>
                     </article>
