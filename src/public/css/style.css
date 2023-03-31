@@ -4,7 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: rgba(157, 190, 185, 1);
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -269,3 +269,4 @@ footer {
     display: flex;
     flex-direction: column;
 }
+

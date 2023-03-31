@@ -19,7 +19,7 @@ module.exports = {
         UPDATED_AT: (new Date()).toJSON().substring(0,19)
       },
       {
-        CATEGORIA_ID: 2,                
+        CATEGORIA_ID: 3,                
         NOME_PRODUTO: 'Enfeite Aquário Castelo Medieval',   
         DESCRICAO: 'Enfeite fabricado em resina e pintura atóxica.',  
         PRECO: 65.91,
@@ -88,7 +88,7 @@ module.exports = {
         NOME_PRODUTO: 'Pulôver',   
         DESCRICAO: 'Pulôver para cachorro confeccionado em Soft atoalhado tecido bem elástico que proporciona conforto e mobilidade para seu pet.', 
         PRECO: 64.50, 
-        IMAGEM_URL: 'https://static3.tcdn.com.br/img/img_prod/719253/roupa_para_cachorro_pulover_pickorruchos_coat_703_1_20201214002043.jpg',
+        IMAGEM_URL: 'https://www.petlove.com.br/images/products/162908/product/Pulover-Pickorruchos-Jacquard---Cinza2.jpg',
         PROMOCAO: 0,
         DESTAQUE: 1,
         SEM_ESTOQUE: 0, 
@@ -219,6 +219,32 @@ module.exports = {
         DESCRICAO: 'Monte sua piscina meu pet de forma prática e rápida, atenção, não é necessário inflar, apenas montar.', 
         PRECO: 93.00, 
         IMAGEM_URL: 'https://terrazoo-ecommerce-images.s3.amazonaws.com/uploads/2021/12/473898.jpg',
+        PROMOCAO: 0,
+        DESTAQUE: 1,
+        SEM_ESTOQUE: 0, 
+        ATIVO: 1,                    //  1: SIM e 0: NÃO
+        CREATED_At: (new Date()).toJSON().substring(0,19),
+        UPDATED_AT: (new Date()).toJSON().substring(0,19)
+      },
+      {
+        CATEGORIA_ID: 5,                 
+        NOME_PRODUTO: 'Bebedouro para Roedores Bico Alumínio',
+        DESCRICAO: 'Bico de Alumínio, Suporte e bico removível, Capacidade: 290 ml, Ideal para gaiolas de Coelho, Hamster e Chinchila, Super leve', 
+        PRECO: 22.90, 
+        IMAGEM_URL: 'https://images.tcdn.com.br/img/img_prod/1037527/bebedouro_para_roedores_coelho_chinchila_bico_aluminio_290ml_827_1_0fd1c779c273a41a3e9c5fe5b04b7002.jpg',
+        PROMOCAO: 0,
+        DESTAQUE: 1,
+        SEM_ESTOQUE: 0, 
+        ATIVO: 1,                    //  1: SIM e 0: NÃO
+        CREATED_At: (new Date()).toJSON().substring(0,19),
+        UPDATED_AT: (new Date()).toJSON().substring(0,19)
+      },
+      {
+        CATEGORIA_ID: 5,                 
+        NOME_PRODUTO: 'Brinquedos de porquinho-da-índia',
+        DESCRICAO: '1. Feito de uma seleção rigorosa de materiais de aroma de madeira natural, que são bons para digestão e aumentam o apetite dos animais de estimação. Os brinquedos de mastigar para animais de estimação são feitos à mão com grama natural e madeira de frutas para ajudar os animais de estimação a triturar os dentes e evitar que os dentes cresçam muito rápido.', 
+        PRECO: 68.79, 
+        IMAGEM_URL: 'https://m.media-amazon.com/images/I/71AktEPl05L._AC_SX679_.jpg',
         PROMOCAO: 0,
         DESTAQUE: 1,
         SEM_ESTOQUE: 0, 
