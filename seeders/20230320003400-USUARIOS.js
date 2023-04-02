@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
         
-    await queryInterface.bulkInsert('Usuarios', 
+    await queryInterface.bulkInsert('Usuario', 
     [
       {
         TIPO_USUARIO: 0,                /*  0 É ADMINISTRADOR */
@@ -130,6 +130,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('USUARIOS', null, {});
+    await queryInterface.bulkDelete('USUARIO', null, {});
   }
 };

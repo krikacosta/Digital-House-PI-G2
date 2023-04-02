@@ -91,21 +91,21 @@
             <% for(let produto of produtos) { %>
                 <% if(typeof(url) == 'undefined' ) {%>
                     <article>
-                        <a href="/produto/<%=produto.ID%>" target="_blank">
+                        <a href="/produto/<%=produto.ID%>">
                             <img src="<%= produto.IMAGEM_URL%>" alt="<%= produto.NOME_PRODUTO%>">
                             <div class="detalhe-produto">
                                 <p class="titulo-detalhe-produto"><%= produto.NOME_PRODUTO%></p>
-                                <spam><strong>R$ <%= produto.PRECO.toLocaleString('pt-BR', {style: 'decimal', maximumFractionDigits: 2})%></strong></spam>
+                                <spam><strong><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></strong></spam>
                             </div>
                         </a>
                     </article>
                 <%} else if (url[11] == produto.CATEGORIA_ID) {%>
                     <article>
-                        <a href="/produto/<%=produto.ID%>" target="_blank">
+                        <a href="/produto/<%=produto.ID%>">
                             <img src="<%= produto.IMAGEM_URL%>" alt="<%= produto.NOME_PRODUTO%>">
                             <div class="detalhe-produto">
                                 <p class="titulo-detalhe-produto"><%= produto.NOME_PRODUTO%></p>
-                                <spam><strong>R$ <%= produto.PRECO.toLocaleString('pt-BR', {style: 'decimal', maximumFractionDigits: 2})%></strong></spam>
+                                <spam><strong><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></strong></spam>
                             </div>
                         </a>
                     </article>
@@ -114,75 +114,6 @@
 
                 
             <%}%>
-            <!-- <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/caminha_de_pallet/images (45).jpeg" alt="caminha de pallet">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Caminha Pet de Pallet</p>
-                        <spam><strong>R$ 150,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/caminhas_de_pneus/images (50).jpeg" alt="caminha de pneu">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Caminha Pet de Pneu</p>
-                        <spam><strong>R$ 120,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/caminhas_de_sofa/images (37) 1.jpeg" alt="caminha para sofa">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Caminha Pet para Sofá</p>
-                        <spam><strong>R$ 90,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/casinhas/images (51).jpeg" alt="casinha">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Casinha Pet</p>
-                        <spam><strong>R$ 250,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/coleiras/images (56).jpeg" alt="coleira">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Coleiras Pet Custom</p>
-                        <spam><strong>R$ 45,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/meias_cachorro/images (69).jpeg" alt="meia para cachorro">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Meias Pets</p>
-                        <spam><strong>R$ 25,00</strong></spam>
-                    </div>
-                </a>
-            </article>
-
-            <article>
-                <a href="./produto.html" target="_blank">
-                    <img src="img/fotos_produtos/roupinhas/images (32) 1.jpeg" alt="roupinha">
-                    <div class="detalhe-produto">
-                        <p class="titulo-detalhe-produto">Roupinhas Pets</p>
-                        <spam><strong>R$ 70,00</strong></spam>
-                    </div>
-                </a>
-            </article> -->
 
         </section>
     </main>
