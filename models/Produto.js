@@ -32,20 +32,24 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     PROMOCAO: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.TEXT,
+      defaultValue: 'NAO',
       allowNull: true
     },
     DESTAQUE: {
-      type: DataTypes.TINYINT,
-      allowNull: true
+      type: DataTypes.TEXT,
+      defaultValue: 'NAO',
+      allowNull: true,
     },
-    SEM_ESTOQUE: {
-      type: DataTypes.TINYINT,
-      allowNull: true
+    ESTOQUE: {
+      type: DataTypes.TEXT,
+      defaultValue: 'NAO',
+      allowNull: true,
     },
     ATIVO: {
-      type: DataTypes.TINYINT,
-      allowNull: true
+      type: DataTypes.TEXT,
+      defaultValue: 'NAO',
+      allowNull: true,
     },
   }, {
     tablename: "PRODUTOS",

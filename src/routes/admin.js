@@ -1,14 +1,15 @@
 const express = require('express');
-const router = express.Router();
 const AdminController = require("../controllers/AdminController");
+const router = express.Router();
+
 
 
 // router.get("/produtos/index", AdminController.showHome)
-router.get("/produtos/", AdminController.listProdutos);
-router.get("/produtos/cadastrar", AdminController.showCreateProduto);
-router.post("/produtos/cadastrar", AdminController.storeProduto);
-router.get("/produtos/:id/editar", AdminController.showEditProduto);
-router.put("/produtos/:id/editar", AdminController.updateProduto);
-router.delete("/produtos/:id/deletar", AdminController.deleteProduto);
+router.get("/admin/produtos/", AdminController.listProdutos);
+router.get("/admin/produtos/cadastrar", AdminController.showCreateProduto);
+router.post("/admin/produtos/cadastrar", AdminController.storeProduto);
+router.get("/admin/produtos/:id/editar", AdminController.showEditProduto);
+router.post("/admin/produtos/:id/editar", AdminController.updateProduto);
+router.post('/admin/produtos/:id/deletar', AdminController.deleteProduto);
 
 module.exports = router;

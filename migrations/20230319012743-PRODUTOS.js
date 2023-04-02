@@ -33,19 +33,23 @@ module.exports = {
           allowNull: true
         },
         PROMOCAO: {
-          type: Sequelize.DataTypes.TINYINT,
+          type: Sequelize.DataTypes.TEXT,
+          defaultValue: 'NAO',
           allowNull: true
         },
         DESTAQUE: {
-          type: Sequelize.DataTypes.TINYINT,
+          type: Sequelize.DataTypes.TEXT,
+          defaultValue: 'NAO',
           allowNull: true
         },
-        SEM_ESTOQUE: {
-          type: Sequelize.DataTypes.TINYINT,
+        ESTOQUE: {
+          type: Sequelize.DataTypes.TEXT,
+          defaultValue: 'NAO',
           allowNull: true
         },
         ATIVO: {
-          type: Sequelize.DataTypes.TINYINT,
+          type: Sequelize.DataTypes.TEXT,
+          defaultValue: 'NAO',
           allowNull: true
         },
         CREATED_AT: Sequelize.DataTypes.DATE,

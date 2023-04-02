@@ -173,6 +173,15 @@ footer {
 
 }
 
+.camposselect{
+    border-radius: 1.2rem;
+    border-color: white;   
+    border: 0rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+
+}
+
 .descricaoProd textarea {
     border-radius: 1.2rem;
     border-color: white;   
