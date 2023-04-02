@@ -1,147 +1,4 @@
-/*  .section_itensCompras {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    justify-content: space-between;
-    margin-left: 3rem;
-    margin-right: 5rem;
- }
-
- .carrinhoCompras {
-    margin-top: 15rem;
-    margin-left: 3rem;
- }
-
- .limparCarrinho {
-    color: rgb(1, 135, 142);
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1.5rem;
- }
-
- .gridCarrinho {
-    display: grid;
-    grid-template-columns: minmax(65%, 3fr) minmax(32%, 1.45fr);
-    gap: 2.4rem;
-} 
-
-
- .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
-    border: 0.1rem solid rgb(211, 211, 211);
-    border-radius: 1.2rem;
-    padding: 1rem;
-    margin-left: 3rem;
-}
-
-.box_img{
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.box_img img {
-    width: 18rem;
-}
-
-.box_qtde {
-    display: flex;
-}
-
-div button {
-    width: 4rem;
-    height: 3rem;
-    
- }
-
- .box_qtde button {
-    border-radius: 0.8rem;
-    padding: 0 1rem;
-    border: 0.2rem solid gray;
- }
-
- .box_qtde span {
-    font-size: 1.5rem;
-    border: 0.2rem solid gray;
-    border-radius: 0.8rem;
-    padding: 0.2rem 1.5rem;
-    margin: 0 1rem;
-}
-
- 
- .img_lixeira {
-    width: 2rem;
- }
-
- .cep {
-    padding: 1rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
- }
-
- .article_cep {
-    align-items: center;
-    justify-items: center;
-    border: 0.1rem solid rgb(211, 211, 211);
-    border-radius: 1.2rem;
-    padding: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 5rem;
-    
- }
-
- .label_cep{
-    font-size: 1.5rem;
- }
-
- .input_cep {
-    border-radius: 0.5rem;
-    border: 0px;
-    height: 2.5rem;
- }
- 
-
- .submit_cep {
-    width: 8rem;
-    border-radius: 0.8rem;
-    border: 0px;
-    font-weight: 600;
-    background-color: rgb(1, 135, 142);
-    color: rgb(255, 255, 255);
- }
-
-.section_resumoCompras {
-    border: 0.1rem solid rgb(211, 211, 211);
-    border-radius: 1.2rem;
-    padding: 2rem;
-    margin-right: 3rem;
-}
-
-article span {
-    font-size: 2rem;
-}
-
-.final_produtos, .final_frete {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 1rem;
-    margin-bottom: 1.6rem;
-}
-
-.final_total {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 1rem;
-    margin-bottom: 1.6rem;
-    font-weight: 600;
-    border-top: 1px solid rgb(218, 218, 218);
-    padding-top: 1.6rem;
-} */
+@import url('./headerSimples_footer.css');
 
 .button_finalizar_compra {
    display: inline-flex;
@@ -186,7 +43,6 @@ a {
 }
 
 .table {
-
    width: 100%;
    margin-bottom: 1rem;
    color: var(--bs-table-color);
@@ -213,6 +69,41 @@ a {
   }
 
   .table thead {
-   font-size: 2rem;
-   border-color: rgb(1, 135, 142);
+      font-size: 2rem;
+      border-color: rgb(1, 135, 142);
   }
+
+  .endcep input{
+      border-radius: 1.2rem;
+      border-color: white;   
+      border: 0rem;
+      padding: 0.6rem;
+      margin-bottom: 1.2rem;
+   }
+
+   .endcep label {
+      margin-right: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+   }
+
+   .endcep input {
+      font-size: 1.5rem;
+      width: 12%;
+   }
+
+   .frete {
+      display: flex;
+      flex-direction: row;
+      font-size: 2rem;
+      font-weight: bold;
+   }
+
+   .frete p {
+      margin-right: 1rem;
+   }
+
+   .fin_compra {
+      display: flex;
+      flex-direction: row;
+   }
