@@ -1,5 +1,5 @@
 const { Produto } = require("../../models");
-// const { Categoria } = require("../../models");
+const { Categoria } = require("../../models");
 
 console.log("página admin")
 
@@ -7,15 +7,14 @@ const AdminController = {
 
     listProdutos: async (req, res) => {
 
-        // showHome: async (req, res) => {
         const url = req.originalUrl;
         const produtos = await Produto.findAll(
-            // {
+           // {
             //     include: {
-            //         model: Categoria,
+           //          model: Categoria,
             //         as: 'categoria'
             //     }
-            // }
+            //}
         )
        // console.log(produtos)
 
@@ -41,7 +40,7 @@ const AdminController = {
     },
 
     storeProduto: async (req, res) => {
-        const { categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, sem_estoque, ativo } = req.body;
+        const { categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, estoque, ativo } = req.body;
 
         
 
@@ -55,7 +54,7 @@ const AdminController = {
             IMAGEM_URL: imagem_url,
             PROMOCAO: promocao,
             DESTAQUE: destaque,
-            SEM_ESTOQUE: sem_estoque,
+            ESTOQUE: estoque,
             ATIVO: ativo
         });
 
@@ -76,7 +75,7 @@ const AdminController = {
 
     updateProduto: async (req, res) => {
         
-        const {categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, sem_estoque, ativo } = req.body;
+        const {categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, estoque, ativo } = req.body;
         const { id } = req.params
 
         const produtoAtualizado = { 
@@ -87,7 +86,7 @@ const AdminController = {
             IMAGEM_URL: imagem_url,
             PROMOCAO: promocao,
             DESTAQUE: destaque,
-            SEM_ESTOQUE: sem_estoque,
+            ESTOQUE: estoque,
             ATIVO: ativo };
        
         console.log(produtoAtualizado);

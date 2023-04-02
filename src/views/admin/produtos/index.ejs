@@ -54,14 +54,15 @@
 						<tr align="center">
 							<th scope="col">ID</th>
 							<th scope="col">Categoria</th>
+							<th scope="col">Categoria Descricao</th>
 							<th scope="col">Nome</th>
 							<th scope="col">Descrição</th>
 							<th scope="col">Preço</th>
 							<th scope="col">Imagem</th>
 							<th scope="col">Promoção</th>
 							<th scope="col">Destaque</th>
-							<th scope="col">Sem Estoque</th>
-							<th scope="col">Ativo/Inativo</th>
+							<th scope="col">Estoque</th>
+							<th scope="col">Ativo</th>
 							<th colspan="2" scope="col">Ações</th>
 							
 						</tr>
@@ -72,6 +73,27 @@
 						<tr align="center">
 							<th scope="row"><%= produto.ID %></th>
 							<td><%= produto.CATEGORIA_ID %></td>
+
+							<% if(produto.CATEGORIA_ID == 1) { %>
+							<td>CAES</td>
+
+							<% } else if(produto.CATEGORIA_ID == 2) { %>
+							<td>GATOS</td>
+
+							<% } else if(produto.CATEGORIA_ID == 3) { %>
+							<td>PEIXES</td>
+
+							<% } else if(produto.CATEGORIA_ID == 4) { %>
+							<td>AVES</td>
+
+							<% } else if(produto.CATEGORIA_ID == 5) { %>
+							<td>OUTROS PETS</td>
+
+							<% } else if(produto.CATEGORIA_ID == 6) { %>
+							<td>ACESSORIOS</td>
+
+							<% } %>
+
 							<td><%= produto.NOME_PRODUTO %></td>
 							<td><%= produto.DESCRICAO %></td>
 							<td><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.PRECO))%></td>
@@ -84,7 +106,7 @@
 							</td>
 							<td><%= produto.PROMOCAO %></td>
 							<td><%= produto.DESTAQUE %></td>
-							<td><%= produto.SEM_ESTOQUE%></td>
+							<td><%= produto.ESTOQUE%></td>
 							<td><%= produto.ATIVO %></td>
 
 							<td align="center">

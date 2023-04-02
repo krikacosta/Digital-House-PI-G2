@@ -38,7 +38,62 @@
                 <input type="text" class="form-control" name="nome_produto" id="nome_produto" value="<%= Produto.NOME_PRODUTO %>">
 
                 <label for="categoria_id">Categoria</label>
-                <input type="number" class="form-control" name="categoria_id" id="categoria_id" value="<%= Produto.CATEGORIA_ID %>">
+                <select id="categoria_id" name="categoria_id" class="camposselect" >
+
+                    <% if(Produto.CATEGORIA_ID == 1) { %>
+                        <option value="1">CAES</option>
+                        <option value="2">GATOS</option>
+                        <option value="3">PEIXES</option>
+                        <option value="4">AVES</option>
+                        <option value="5">OUTROS PETS</option>
+                        <option value="6">ACESSORIOS</option>
+
+                        <% } else if(Produto.CATEGORIA_ID == 2) { %>
+                        <option value="2">GATOS</option>
+                        <option value="1">CAES</option>
+                        <option value="3">PEIXES</option>
+                        <option value="4">AVES</option>
+                        <option value="5">OUTROS PETS</option>
+                        <option value="6">ACESSORIOS</option>
+
+                        <% } else if(Produto.CATEGORIA_ID == 3) { %>
+                        <option value="3">PEIXES</option>
+                        <option value="1">CAES</option>
+                        <option value="2">GATOS</option>
+                        <option value="4">AVES</option>
+                        <option value="5">OUTROS PETS</option>
+                        <option value="6">ACESSORIOS</option>
+
+                        <% } else if(Produto.CATEGORIA_ID == 4) { %>
+                        <option value="4">AVES</option>
+                        <option value="1">CAES</option>
+                        <option value="2">GATOS</option>
+                        <option value="3">PEIXES</option>
+                        <option value="5">OUTROS PETS</option>
+                        <option value="6">ACESSORIOS</option>
+
+                        <% } else if(Produto.CATEGORIA_ID == 5) { %>
+                        <option value="5">OUTROS PETS</option>
+                        <option value="1">CAES</option>
+                        <option value="2">GATOS</option>
+                        <option value="3">PEIXES</option>
+                        <option value="4">AVES</option>
+                        <option value="6">ACESSORIOS</option>
+
+                        <% } else if(Produto.CATEGORIA_ID == 6) { %>
+                        <option value="6">ACESSORIOS</option>
+                        <option value="1">CAES</option>
+                        <option value="2">GATOS</option>
+                        <option value="3">PEIXES</option>
+                        <option value="4">AVES</option>
+                        <option value="5">OUTROS PETS</option>
+
+                        <% } %>
+
+                  
+                 
+                    </select>
+               
 
                 <label for="preco">Preço</label>
                 <input type="number" class="form-control" name="preco" id="preco" value="<%= Produto.PRECO %>">
@@ -56,19 +111,51 @@
         
             </div>
             
-            <div class="segundaColuna">							
-		
+            <div class="segundaColuna">
+                
                 <label for="promocao">Promocao</label>
-                <input type="number" class="form-control" name="promocao" id="promocao" value="<%= Produto.PROMOCAO %>">
-
+                	<select id="promocao" name="promocao" class="camposselect">
+                        <% if(Produto.PROMOCAO == 'NAO') { %>
+                        <option value="<%= Produto.PROMOCAO %>"><%= Produto.PROMOCAO %></option>
+                        <option value="SIM">SIM</option>
+                        <% } else { %>
+                        <option value="<%= Produto.PROMOCAO %>"><%= Produto.PROMOCAO %></option>
+						<option value="NAO">NAO</option>
+                        <% } %>
+					</select>
+		
                 <label for="destaque">Destaque</label>
-                <input type="number" class="form-control" name="destaque" id="destaque" value="<%= Produto.DESTAQUE %>">
+                <select id="destaque" name="destaque" class="camposselect" value="<%= Produto.DESTAQUE %>">
+                    <% if(Produto.DESTAQUE == 'NAO') { %>
+                    <option value="<%= Produto.DESTAQUE %>"><%= Produto.DESTAQUE %></option>
+                    <option value="SIM">SIM</option>
+                    <% } else { %>
+                    <option value="<%= Produto.DESTAQUE %>"><%= Produto.DESTAQUE %></option>    
+                    <option value="NAO">NAO</option>
+                    <% } %>
+                </select>
 
-                <label for="sem_estoque">Sem Estoque</label>
-                <input type="number" class="form-control" name="sem_estoque" id="sem_estoque" value="<%= Produto.SEM_ESTOQUE %>">
+                <label for="estoque">Estoque</label>
+                <select id="estoque" name="estoque" class="camposselect" value="<%= Produto.ESTOQUE %>">
+                <% if(Produto.ESTOQUE == 'NAO') { %>
+                    <option value="<%= Produto.ESTOQUE %>"><%= Produto.ESTOQUE %></option>
+                    <option value="SIM">SIM</option>
+                    <% } else { %>
+                    <option value="<%= Produto.ESTOQUE %>"><%= Produto.ESTOQUE %></option>
+                    <option value="NAO">NAO</option>
+                    <% } %>
+                </select>
 
                 <label for="ativo">Ativo</label>
-                <input type="number" class="form-control" name="ativo" id="ativo" value="<%= Produto.ATIVO %>">
+                <select id="ativo" name="ativo" class="camposselect" value="<%= Produto.ATIVO %>">
+                    <% if(Produto.ATIVO == 'NAO') { %>
+                    <option value="<%= Produto.ATIVO %>"><%= Produto.ATIVO %></option>
+                    <option value="SIM">SIM</option>
+                    <% } else { %>
+                    <option value="<%= Produto.ATIVO %>"><%= Produto.ATIVO %></option>
+                    <option value="NAO">NAO</option>
+                    <% } %>
+                </select>
 
                 <input type="hidden" class="form-control" name="id" id="id"	value="<%= Produto.ID %>">
             
