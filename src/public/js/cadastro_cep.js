@@ -6,6 +6,13 @@ const inputCidade = document.querySelector('#novoCidade'); // substituir pelo id
 const inputBairro = document.querySelector('#novoBairro'); // substituir pelo id do seu formulário
 const inputRua = document.querySelector('#novoRua'); // substituir pelo id do seu formulário
 
+const mensagemElement = document.getElementById("frete");
+
+inputCep.addEventListener("blur", () => {
+//   const nome = nomeInput.value;
+  mensagemElement.textContent = `R$ 10,00 - 7 dias`;
+});
+
 inputCep.addEventListener('keypress', verficarTamanhoDoCep);
 inputCep.addEventListener('blur', fetchData);
 
@@ -36,3 +43,10 @@ async function fetchData() {
     inputRua.value = street;
    
 }
+
+
+
+
+
+
+

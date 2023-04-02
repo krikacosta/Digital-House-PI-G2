@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/finalizar_compra.css">
-    <link rel="stylesheet" href="css/headerSimples_footer.css">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/finalizar_compra.css"/>
+    <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"/>
     
-    <title>Art Pet & Cia</title>
+    <script src="/js/cadastro_cep.js" defer></script>
+    <script src="/js/popup.js" defer></script>
+    <title>Art Pet & Cia - Finalizar Compra</title>
+
 </head>
 
-<body class="container">
-   
+<body class="fundo">
     <%- include("./components/headerSimples.ejs") %>
+    
+    <main>
+		<section class="container" style="margin-top: 120px">
+			<h1 class="finalizartext">Finalizar Compra</h1>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">Código</th> -->
+                        <th scope="col"></th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(!carrinhocompra.length) { %>
+                        <section class="carrinhovazio">
+                            <h3>Carrinho Vazio! 😔</h3>
+                            <h3><a href="/">Volte para a página de Produtos!</a></h3>
+                        </section>
+                    <% } else { carrinhocompra.forEach(produto => { %>  
+                    <tr>
+                        <!-- <th scope="row"><%= produto.produto_id %></th> -->
+                        <td>
+                            <img class="thumb" src="<%= produto.produto_img %>" alt="" width="100px" height="100px" />
+                        </td>
+                        <td><%= produto.produto_nome%></td>
+                        <td>1</td>                          
+                        <td><%= produto.produto_preco %></td>
+                        <td><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(produto.produto_preco))%></td>
+                        <td>
+                            <form action="/finalizarCompra/<%= produto.produto_id %>/deletar" method="POST">
+                                <input type="hidden" name="carrinhocompra" value="<%= JSON.stringify(carrinhocompra) %>">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %> <% } %>
+                </tbody>
+            </table>
 
-    <main class="conteiner">
+            <article>
+                <a href="/" class="button_continuar_compra">Comprar mais produtos</a>
+            </article>
 
         <div class="finalizar_formaPgto">
             <h1>Foma de Pagamento</h1>
@@ -22,173 +71,201 @@
         </div>
 
         <nav>
-        <div class="finalizar_cartao">
-            
-            
-            <div class="accordion-item">
-                <input class="inputAccordion" type="checkbox" name="check1" id="check1">
-                <label class="labelAccordion" for="check1">
-                    Cartão de Crédito
-                </label>
-                
-                                
-                <section>
-                    <div>
-                        <div class="input-form-cartao">
-                            <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número">
+            <div class="finalizar_cartao">
+                <div class="accordion-item">
+                    <input class="inputAccordion" type="checkbox" name="check1" id="check1">
+                    <label class="labelAccordion" for="check1">
+                        Cartão de Crédito
+                    </label>
+                                               
+                    <section>
+                        <div>
+                            <div class="input-form-cartao">
+                                <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número">
+                            </div>
+                            
+                            <div class="input-form-cartao">
+                                <input type="text" name="nome" id="nome" placeholder="Nome impresso no cartão">
+                            </div>
+                            
+                            <div class="input-form-cpf-validade">
+                                <input type="text" name="cpfCartao" id="cpfCartao" placeholder="CPF do titular">
+                                <input type="text" name="validadeCartao" id="validadeCartao" placeholder="Validade">
+                            </div>
+                            
+                            <div class="input-form-cvv-parcelas">
+                                <article class="input-form-cvv">
+                                    <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
+                                </article>
+                            
+                                <article class="input-form-parcelas">
+                                    <select name="parcelasCartao" id="parcelasCartao">
+                                        <option selected disabled>Parcelas</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </article>
+                            </div>
                         </div>
-                        
-                        <div class="input-form-cartao">
-                            <input type="text" name="nome" id="nome" placeholder="Nome impresso no cartão">
+                        <div class="imgCard">
+                            <img src="img/icones/—Pngtree—credit card flat icon_6845408.png">
                         </div>
-                        
-                        <div class="input-form-cpf-validade">
-                            <input type="text" name="cpfCartao" id="cpfCartao" placeholder="CPF do titular">
-                            <input type="text" name="validadeCartao" id="validadeCartao" placeholder="Validade">
-                        </div>
-                        
-                        <div class="input-form-cvv-parcelas">
-                            <article class="input-form-cvv">
-                                <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
-                            </article>
-                        
-                            <article class="input-form-parcelas">
-                                <select name="parcelasCartao" id="parcelasCartao">
-                                    <option selected disabled>Parcelas</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="imgCard">
-                        <img src="img/icones/—Pngtree—credit card flat icon_6845408.png">
-                    </div>
-                </section>    
-            </div>
-            
-        </div>
-
-        <div class="finalizar_pix">
-            <div class="accordion-item">
-                <input class="inputAccordion" type="checkbox" name="check2" id="check2">
-                <label class="labelAccordion" for="check2">
-                    Pix
-                </label>
-                <h4>Pague na hora com Pix</h4>
-                                
-            <!--     <section>
-            
-
-            <h3>Pix</h3>
-            <h4>Pague na hora com Pix</h4>
-           -->
-            <section>
-                <ol>
-                    <li>
-                        O código Pix será exibido na próxima etapa, após o pedido ser finalizado.
-                    </li>
-                    <li>
-                        Você deverá realizar o pagamento no aplicativo do seu banco.
-                    </li>
-                </ol>
-            </section>
-        
-            
-            <section >
-                <span><strong>O código Pix expira em 10 minutos.</strong></span>
-            </section>
-        </div>
-        </div>
-
-
-
-        <div class="gridCompra">
-            <div class="primeiraColunaCompra">
-                <section class="section_finalizarCompra">
-                    <h2>Finalização de Compras</h2>
-                    <span>Confira as informações antes de finalizar a compra</span>
-                </section>
-
-                     
-                <div class="confirmarDadosPessoais">
-                    <span>Dados Pessoais</span>
+                    </section>    
                 </div>
+            </div>
 
-                <div class="section_confirmarDadosPessoais">
+            <div class="finalizar_pix">
+                <div class="accordion-item">
+                    <input class="inputAccordion" type="checkbox" name="check2" id="check2">
+                    <label class="labelAccordion" for="check2">
+                        Pix
+                    </label>
+                    <h4>Pague na hora com Pix</h4>
+        
+                    <section>
+                        <ol>
+                            <li>
+                                O código Pix será exibido na próxima etapa, após o pedido ser finalizado.
+                            </li>
+                            <li>
+                                Você deverá realizar o pagamento no aplicativo do seu banco.
+                            </li>
+                        </ol>
+                    </section>
+            
+                    <section >
+                        <span><strong>O código Pix expira em 10 minutos.</strong></span>
+                    </section>
+                </div>
+            </div>
+            <div class="gridCompra">
+                <div class="primeiraColunaCompra">
+                    <section class="section_finalizarCompra">
+                        <h2>Finalização de Compras</h2>
+                        <span>Confira as informações antes de finalizar a compra</span>
+                    </section>
+                    <div class="confirmarDadosPessoais">
+                        <span>Dados Pessoais</span>
+                    </div>
+                    <div class="section_confirmarDadosPessoais">
+                            <section>
+                                <img src="img/icones/do-utilizador.svg">
+                            </section>
+                            <section>
+                                <article class="confirmarNome">
+                                    <span><strong>João José da Silva</span></strong>
+                                </article>
+                                <article class="confirmarEmail">
+                                    <span>E-mail:</span>
+                                    <span>joaojose@gmail.com</span>
+                                </article>
+                                <article class="confirmarTelefone">
+                                    <span>Telefone:</span>
+                                    <span>11 99988-7766</span>
+                                </article>
+                            </section>
+                            <section>
+                                <img src="img/icones/lapis.svg">
+                            </section>
+                    </div>
+                    <div class="confirmarEndereco">
+                        <span>Endereço de Entrega</span>
+                    </div>
+                    <div class="finalizar_confirmarEndereco">
                         <section>
                             <img src="img/icones/do-utilizador.svg">
                         </section>
                         <section>
-                            <article class="confirmarNome">
-                                <span><strong>João José da Silva</span></strong>
+                            <article class="confirmarRua">
+                                <span>Rua Nossa Senhora da Lapa, 1700 - Lapa</span>
                             </article>
-                            <article class="confirmarEmail">
-                                <span>E-mail:</span>
-                                <span>joaojose@gmail.com</span>
+                            <article class="confirmarCidade">
+                                <span>São Paulo</span>
                             </article>
-                            <article class="confirmarTelefone">
-                                <span>Telefone:</span>
-                                <span>11 99988-7766</span>
+                            <article class="confirmarCep">
+                                <span>CEP: 05072-000</span>
                             </article>
                         </section>
                         <section>
-                            <img src="img/icones/lapis.svg">
+                            <a href="/cadastrarNovoEnd" class="Alerar Endereço"></a>
+                                <img src="img/icones/lapis.svg">
+                            </a>
                         </section>
+                    </div>
+
+                    <div class="cadNovoEnd">
+                        <div class="accordion-item">
+                            <input class="inputAccordion3" type="checkbox" name="check3" id="check3">
+                            <label class="labelAccordion" for="check3">
+                                Novo Endereço
+                            </label>
+                            <section>                     
+                                <form class="novoEnd" action="" method="POST">
+                                    <div class="novoCep">
+                                        <label for="novoCep">CEP</label>
+                                        <input type="text" name="novoCep" id="novoCep">
+                                    </div>
+                                    <div class="gridNovoEnd">
+                                        <div class="primeiraColunaNovoEnd">
+                                            <label for="novoRua">Logradouro</label>
+                                            <input type="text" name="novoRua" id="novoRua">
+                                            <label for="novoComplemento">Complemento</label>
+                                            <input type="text" name="novoComplemento" id="novoComplemento">
+                                            <label for="novoCidade">Cidade</label>
+                                            <input type="text" name="novoCidade" id="novoCidade">
+                                        </div>
+                                        <div class="segundaColunaNovoEnd">
+                                            <label for="novoNumero">Número</label>
+                                            <input type="text" name="novoNumero" id="novoNumero">
+                                            <label for="novoBairro">Bairro</label>
+                                            <input type="text" name="novoBairro" id="novoBairro">
+                                            <label for="novoEstado">Estado</label>
+                                            <input type="text" name="novoEstado" id="novoEstado">
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="confirmarEndereco">
-                    <span>Endereço de Entrega</span>
+                <div class="segundaColuna">
+                    <section>
+                        <h2>Resumo do Pedido</h2>
+                    </section>
+                    <section class="section_resumoCompras">
+                        <article class="final_produtos">
+                            <span>Produto</span>
+                            <span><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(total))%> </span>
+                        </article>
+                        <article class="final_frete">
+                            <span>Frete</span>
+                            <span>R$ 10,00</span>
+                        </article>
+                        <article class="final_total">
+                            <span>Total</span>
+                            <span><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(total+10))%></span>
+                        </article>
+                        <article>
+                            <!-- <button class="button_finalizar_compra" type="submit">Finalizar Compra</button> -->
+                            <button id="finalizarCompraBtn">Finalizar Compra</button>
+                        </article>
+                    </section>
                 </div>
-
-                <div class="finalizar_confirmarEndereco">
-                    <section>
-                        <img src="img/icones/do-utilizador.svg">
-                    </section>
-                    <section>
-                        <article class="confirmarRua">
-                            <span>Rua Nossa Senhora da Lapa, 1700 - Lapa</span>
-                        </article>
-                        <article class="confirmarCidade">
-                            <span>São Paulo</span>
-                        </article>
-                        <article class="confirmarCep">
-                            <span>CEP: 05072-000</span>
-                        </article>
-                    </section>
-                    <section>
-                        <img src="img/icones/lapis.svg">
-                    </section>
-                </div>
-            </div>
-        
-
-            <div class="segundaColuna">
-                <section>
-                    <h2>Resumo do Pedido</h2>
-                </section>
-
-                <section class="section_resumoCompras">
-                    <article class="final_produtos">
-                        <span>Produto</span>
-                        <span>R$ 190,00</span>
-                    </article>
-                    <article class="final_frete">
-                        <span>Frete</span>
-                        <span>R$ 10,00</span>
-                    </article>
-                    <article class="final_total">
-                        <span>Total</span>
-                        <span>R$ 200,00</span>
-                    </article>
-                    <article>
-                        <button class="button_finalizar_compra" type="submit">Finalizar Compra</button>
-                    </article>
-                </section>
             </div>
         </div>
-    </nav>
+        </nav>
+        </section>
+
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="/img/logo/ArtPet&Cia.jpeg" alt="ArtPet">
+                <p>Compra Finalizada!</p>
+                <p>Pedido 103020</p>
+                <p>ArtPet & Cia agradece a preferência!</p>
+            </div>
+        </div>
     </main>
 
     <%- include("./components/footer.ejs") %>
