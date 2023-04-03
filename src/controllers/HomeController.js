@@ -18,17 +18,6 @@ const HomeController = {
 
         return res.render("index", {produtos, lista_categoria, url});
     }
-    // ,
-
-    // showProduto: async (req, res) => {
-    //     const { produto } = req.params;
-    //     // console.log("estou na home controller show produto")
-    //     // console.log(produto)
-    //     const item = await Produto.findByPk(id)
-
-
-    //     return res.render('produto', { item });
-    // }
 
 }
 

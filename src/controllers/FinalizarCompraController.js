@@ -7,7 +7,7 @@ const FinalizarCompraController = {
         
       carrinhocompra = JSON.parse(req.body.compra);
       
-      console.log(carrinhocompra);
+      // console.log(carrinhocompra);
       
       let total = 0;
 
@@ -33,8 +33,8 @@ const FinalizarCompraController = {
       carrinhocompra.splice(index, 1);
       // carrinho.splice(index, 1);
 
-      console.log(id);
-      console.log(carrinhocompra);
+      // console.log(id);
+      // console.log(carrinhocompra);
 
       let total = 0;
 

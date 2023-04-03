@@ -36,8 +36,8 @@ const CarrinhoController = {
       const index = carrinho.findIndex(produto => produto.produto_id == id);
       carrinho.splice(index, 1);
   
-      console.log(id);
-      console.log(carrinho);
+      // console.log(id);
+      // console.log(carrinho);
 
       let total = 0;
 

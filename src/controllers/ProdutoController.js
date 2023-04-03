@@ -22,33 +22,3 @@ const ProdutoController = {
 }
 
 module.exports = ProdutoController;
-
-
-
-        // itens = []
-        // produtos.forEach(element => {
-        //     itens.push(element)
-        // });
-
-        // itens.forEach(item => {
-        //     console.log(item)
-        // })
-
-        // console.log(itens[1])
-        // const categoria = await Categoria.findByPk(id)
-        // let tamanhos = []
-
-        // const identificaEstoque = await Estoque.findAll({
-        //       produto_id: 1,
-        //   })
-          
-
-        // const {tamanho} = await Estoque.findByPk(id)
-
-        // console.log(identificaEstoque)
-
-
-
-
-         // const produto = await Produto.findbyPK(produto.ID)
-        // return res.render("produto",{produto});

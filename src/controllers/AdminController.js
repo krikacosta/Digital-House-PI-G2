@@ -8,18 +8,8 @@ const AdminController = {
     listProdutos: async (req, res) => {
 
         const url = req.originalUrl;
-        const produtos = await Produto.findAll(
-           // {
-            //     include: {
-           //          model: Categoria,
-            //         as: 'categoria'
-            //     }
-            //}
-        )
-       // console.log(produtos)
-
-
-
+        const produtos = await Produto.findAll()
+           
         return res.render('admin/produtos/index', { url, produtos });
     },
 
@@ -29,7 +19,7 @@ const AdminController = {
 
         // const produtos = await Produto.findAll();
         const produtos = await res.Produto;
-        console.log(produtos)
+        // console.log(produtos)
         // const produtos = Produto.findAll();
 
         return res.render("admin/produtos", { produtos })
@@ -41,10 +31,6 @@ const AdminController = {
 
     storeProduto: async (req, res) => {
         const { categoria_id, nome_produto, descricao, preco, imagem_url, promocao, destaque, estoque, ativo } = req.body;
-
-        
-
-        
 
         await Produto.create({
             CATEGORIA_ID: categoria_id,
@@ -65,9 +51,7 @@ const AdminController = {
         const { id } = req.params;
 
         const produtoencontrado = await Produto.findOne({
-            where: {
-                id
-            }
+            where: { id }
         })
 
         return res.render("admin/produtos/editar", { Produto: produtoencontrado });
@@ -89,7 +73,7 @@ const AdminController = {
             ESTOQUE: estoque,
             ATIVO: ativo };
        
-        console.log(produtoAtualizado);
+        // console.log(produtoAtualizado);
        
         await Produto.update(produtoAtualizado, {
             where: { id }
