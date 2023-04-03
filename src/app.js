@@ -17,9 +17,6 @@ const finalizarCompraRouter = require('./routes/finalizarCompra');
 const cadastrarNovoEndRouter = require('./routes/cadastrarNovoEnd');
 const adminRouter = require('./routes/admin');
 
-// import db from './src/config.js';
-// const db = require('./src/config.js');
-
 //Variaveis
 const app = express();
 const port = 3030;
@@ -49,8 +46,6 @@ app.use(cadastrarNovoEndRouter);
 app.use(adminRouter);
 //app.use("/admin", adminRouter); // /admin/
 
-// Verifica a conexão com o DB
-// db.sync(() => console.log("Banco de Dados conectado: ${process.env.DB_NAME}"));
 //Escuta do Servidor Funcionando
 app.listen(port, () => console.log(`Servidor funcionando na porta ${port}`))
 // npm run dev -> nodemon | npm start -> node
